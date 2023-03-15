@@ -29,7 +29,7 @@
                   a1Q
                 "
               >
-              Ce que nos partenaires disent
+              Ce que disent nos partenaires
               </h2>
               <p
                 class="

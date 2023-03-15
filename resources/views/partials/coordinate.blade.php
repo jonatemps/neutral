@@ -18,8 +18,10 @@
               alt="about image"
               class="ag a1L lg:a2J"
             /> --}}
-            <iframe class="ag a1L " style=" height: 400px; width: 450px;" id="gmap_canvas" src="https://maps.google.com/maps?q=san%20francisco&t=&z=8&ie=UTF8&iwloc=&output=embed"></iframe>
-          </div>
+            {{-- <iframe class="ag a1L " style=" height: 400px; width: 450px;" id="gmap_canvas" src="https://maps.google.com/maps?q=san%20francisco&t=&z=8&ie=UTF8&iwloc=&output=embed"></iframe> --}}
+            {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d679.358106662095!2d15.304949495854757!3d-4.306544044482014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sP2GPartners!5e0!3m2!1sfr!2scd!4v1677252993668!5m2!1sfr!2scd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+            <iframe style=" height: 400px; width: 450px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.2769403393036!2d15.304624465414946!3d-4.306436999741848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a6a3345befe7d4d%3A0x3b10b16820aebd2f!2sP2GPartners!5e0!3m2!1sfr!2scd!4v1677253746840!5m2!1sfr!2scd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         </div>
         <div class="a7 lg:a1_/2 ae">
           <div class="aB[470px] wow fadeInUp" data-wow-delay=".2s">
@@ -73,7 +75,7 @@
                 "
               >
               Complexe Les Trois Sœurs, avenue Colonel
-              Ebeya, Immeuble La Référence, 3ème étage, Appartement 302, commune de la Gombe/ KINSHASA
+              Ebeya, Immeuble La Référence, 3ème étage, Appartement 302, commune de la Gombe/ KINSHASA / RD. Congo
               </p>
             </div>
             <div class="a1N">
@@ -178,8 +180,7 @@
                   a1R
                 "
               >
-                info@p2gpartners.com <br>
-                p2gpartners@gmail.com
+                contact@p2gpartners.com <br>
               </p>
             </div>
           </div>

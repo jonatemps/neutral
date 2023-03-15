@@ -29,6 +29,7 @@ P2G Partners | A propos
                 a1S
                 a1U
               "
+              style="font-size: x-large;"
             >
             La société a pour objet la mise en commun des moyens utiles à l'exercice de la profession
             juridique des membres en veillant au respect de la liberté de choix par les clients et de

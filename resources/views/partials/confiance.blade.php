@@ -39,7 +39,7 @@
                   a2F
                 "
               >
-              Nous sommes toujours disposées à trouver des solutions efficaces pour tous problèmes juridique en mettant en avances des valeurs ci-après :
+              Nous sommes toujours disposés à trouver des solutions efficaces pour tous problèmes juridique en mettant en avant des valeurs ci-après :
               </p>
               <div class="a8 a1K ab[-12px]">
                 <div

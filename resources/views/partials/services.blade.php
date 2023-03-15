@@ -33,7 +33,7 @@
                   md:a1U
                 "
               >
-              Les activités ci-dessous sont ceux qui guident les actions de notre organisation.
+              Nos axes d’intervention touchent tous les secteurs d’activités.
               </p>
             </div>
           </div>
@@ -93,9 +93,10 @@
                   a3H[10px]
                 "
               >
-              Pour investisseurs dans différents domaines dont les
-              mines, les carrières, l’énergie, les sociétés civiles et commerciales, le travail, le partenariat
-              public-privé, les contrats commerciaux, l’immigration etc.
+              Créer vos entreprises et veiller à leur conformité aux lois. <br>
+              Nos domaines : <br>
+              mines, carrières, énergie, sociétés civiles et commerciales, organisation Non-gouvernementales, travail, partenariat
+              public-privé, contrats civils et commerciaux, fiscalité, immigration etc.
               </p>
             </div>
           </div>
@@ -153,7 +154,7 @@
                   a3H[10px]
                 "
               >
-              Représenter vos intérêts et objectifs auprès des autorités publiques.
+              Représenter vos intérêts et objectifs auprès des particuliers et des autorités publiques.
               </p>
             </div>
           </div>
@@ -211,7 +212,7 @@
                   a3H[10px]
                 "
               >
-              Promouvoir vos intérêts et objectifs par l’application des méthodes important pour influencer les décisions politiques et les politiques publiques à votre faveur.
+              Promouvoir vos intérêts légitimes par des méthodes impliquant transparence et célérité dans le respect des lois en vue de l’atteinte de vos objectifs dans les délais.
               </p>
             </div>
           </div>
@@ -269,7 +270,7 @@
                   a3H[10px]
                 "
               >
-              Nous vous aidons à rester compétitifs dans un environnement en constante évolution en vous apprenant des nouvelles techniques et technologies.
+              Nous vous aidons à rester compétitifs dans un environnement en constante évolution en mettant à votre disposition les éléments d’interprétation de l’actualité juridique.
               </p>
             </div>
           </div>
@@ -324,7 +325,7 @@
                   a3H[10px]
                 "
               >
-              Un moyen efficace pour transmettre des informations, développer des relations professionnelles et influencer les opinions et les décisions.
+              Nous mettons à vottre disposition un moyen efficace pour transmettre des informations, développer des relations professionnelles et influencer les opinions et les décisions.
               </p>
             </div>
           </div>
@@ -370,7 +371,7 @@
                   a2v
                 "
               >
-              Réalisation des études, des analyses ou des prestations
+              Réalisation des études et analyses
               </h3>
               <p
                 class="
@@ -381,11 +382,7 @@
                   a3H[10px]
                 "
               >
-              dans tous les domaines, notamment
-              du droit, de la fiscalité, de la comptabilité, de l’environnement, de l’organisation et de la gestion
-              administrative, commerciale et technique, de l’économie, de la finance etc. au profit de toute
-              personne physique ou morale présente ou future, publique ou privée, de tout organisme national
-              ou international, étatique ou non étatique.
+              Dans tous les domaines des affaires, nous partageons le savoir à travers des réflexions ponctuellement ou régulièrement publiées par nos experts.
               </p>
             </div>
           </div>

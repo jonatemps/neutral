@@ -45,7 +45,8 @@
                 class="a7 dark:aj"
               />
               <img
-                src="images/logo/logoP2GPartners.png"
+                src="images/logo/logoP2GPartnerswWhite.png"
+                {{-- src="images/logo/logoP2GPartnersBlueWhite.png" --}}
                 alt="logo"
                 class="a7 aj dark:ah"
               />
@@ -503,7 +504,8 @@
                   style="height: 50px;"
                 />
                 <img
-                  src="images/logo/logoP2GPartners.png"
+                src="images/logo/logoP2GPartnerswWhite.png"
+                {{-- src="images/logo/logoP2GPartnersBlueWhite.png" --}}
                   alt="logo"
                   class="a7 aj dark:ah"
                   style="height: 50px;"

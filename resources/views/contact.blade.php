@@ -5,8 +5,8 @@ P2G Partners | Contact
 @endsection
 
 
-@section('content')
 
+@section('content')
 
     <!-- ====== Page Title Section Start -->
     <section class="ad a1H a1I[150px] a2p">
@@ -147,6 +147,7 @@ P2G Partners | Contact
           </span>
         </div>
       </section>
+
       <!-- ====== Page Title Section End -->
 
     <!-- ====== Coordinate Section Start -->

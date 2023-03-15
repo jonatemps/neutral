@@ -20,7 +20,7 @@
                 a1Q
               "
             >
-            Nous sommes prêts à aider
+            Nous sommes disponibles!
             </h2>
             <p
               class="

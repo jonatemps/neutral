@@ -35,7 +35,8 @@
             >
                 Notre équipe d’assistance vous répondra dès que possible par e-mail.
             </p>
-            <form>
+            <form action="{{route('contact')}}" method="POST">
+                @csrf
               <div class="a8 a1K ab[-16px]">
                 <div class="a7 md:a1_/2 ae">
                   <div class="a23">
@@ -50,6 +51,7 @@
                     Votre nom
                     </label>
                     <input
+                        name="name"
                       type="text"
                       placeholder="Entrez votre nom"
                       class="
@@ -82,6 +84,7 @@
                     Votre adresse e-mail
                     </label>
                     <input
+                        name="email"
                       type="email"
                       placeholder="Entrez Votre adresse e-mail"
                       class="
@@ -136,8 +139,8 @@
                   </div>
                 </div>
                 <div class="a7 ae">
-                  <a
-                    href="javascript:void(0)"
+                    <button
+                    type="submit"
                     class="
                       aH
                       a1R
@@ -151,9 +154,9 @@
                       a1a
                       a2j
                     "
-                  >
+                    >
                     Soumettre
-                  </a>
+                    </button>
                 </div>
               </div>
             </form>

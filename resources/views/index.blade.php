@@ -37,7 +37,7 @@ P2G Partners | Acceuil
                   a2v
                 "
               >
-              Un accompagnement juridique toujours à votre porté
+              Nous développons notre expertise juridique autour de vos besoins.
               </h1>
               <p
                 class="
@@ -50,9 +50,9 @@ P2G Partners | Acceuil
                   a2s
                 "
               >
-              Vous cherchez une aide juridique fiable et accessibles ?
-              Nous sommes là pour vous. <br>
-              Notre équipe de professionnels expérimentés vous offres une assistance juridique en temps réel pour tous vos besoins.
+              Vous cherchez une assistance juridique adaptée et accessible pour vos affaires ? <br>
+              Nous sommes à votre disposition pour vous accompagner efficacement. <br>
+              Notre équipe de professionnels est compétente pour intervenir avec proactivité dans vos besoins les plus immédiats.
               </p>
               <div class="a8 a9 a1x">
                 <a
