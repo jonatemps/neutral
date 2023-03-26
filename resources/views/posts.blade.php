@@ -307,14 +307,12 @@ P2G Partners | Blog liste articles
         @endforeach
 
       </div>
-
-      <div
+    {{ $posts->links() }}
+      {{-- <div
         class="a8 a1K ab[-16px] wow fadeInUp"
         data-wow-delay=".15s"
-      >
+        >
         <div class="a7 ae">
-            {{-- {{ $posts->links() }} --}}
-            {{-- {{$posts->links}} --}}
           <ul class="a8 a9 a3d a1x">
             <li class="a3e">
               <a
@@ -453,9 +451,8 @@ P2G Partners | Blog liste articles
             </li>
           </ul>
         </div>
-      </div>
+      </div> --}}
     </div>
   </section>
   <!-- ====== Blog Section End -->
-
 @endsection
