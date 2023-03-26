@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PageContoller extends Controller
@@ -19,7 +21,14 @@ class PageContoller extends Controller
     }
 
     public function posts(){
-        return view('posts');
+        $posts = Post::orderBy('created_at','desc')->simplePaginate(6);
+
+        return view('posts',['posts' => $posts]);
+    }
+    public function post(Post $post){
+        $categories = Category::inRandomOrder()->limit(4)->get();
+
+        return view('post',['post' => $post,'categories' => $categories]);
     }
 
     public function contact(){

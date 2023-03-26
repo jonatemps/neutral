@@ -6,563 +6,456 @@ P2G Partners | Blog liste articles
 
 @section('content')
 
-
-    <!-- ====== 404 Section Start -->
-    <section class="ad a1H a1I[180px] a1J[120px]">
-        <div class="aa">
-          <div class="a8 a1K ab[-16px]">
-            <div class="a7 ae">
-              <div class="aB[530px] a1L a1M">
-                <div class="mx-auto a1N a1M">
-                  {{-- <svg
-                    class="a7 a1L a1M"
-                    height="210"
-                    viewBox="0 0 474 210"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  > --}}
-                    <path
-                      opacity="0.5"
-                      d="M25 163.051H101.211V191H133.308V163.051H153V136.111H133.308V32H91.2871L25 136.577V163.051ZM101.831 136.111H58.8025V134.869L100.591 68.6445H101.831V136.111Z"
-                      stroke="url(#paint0_linear_116:1137)"
-                      stroke-width="3"
-                    />
-                    <path
-                      opacity="0.5"
-                      d="M307 133.051H383.211V161H415.308V133.051H435V106.111H415.308V2H373.287L307 106.577V133.051ZM383.831 106.111H340.803V104.869L382.591 38.6445H383.831V106.111Z"
-                      stroke="url(#paint1_linear_116:1137)"
-                      stroke-width="3"
-                    />
-                    <circle
-                      opacity="0.8"
-                      cx="227.5"
-                      cy="81.5"
-                      r="68.5"
-                      fill="#4A6CF7"
-                    />
-                    <mask
-                      id="mask0_116:1137"
-                      style="mask-type: alpha"
-                      maskUnits="userSpaceOnUse"
-                      x="159"
-                      y="13"
-                      width="137"
-                      height="137"
-                    >
-                      <circle
-                        opacity="0.8"
-                        cx="227.5"
-                        cy="81.5"
-                        r="68.5"
-                        fill="#4A6CF7"
-                      />
-                    </mask>
-                    <g mask="url(#mask0_116:1137)">
-                      <circle
-                        opacity="0.8"
-                        cx="227.5"
-                        cy="81.5"
-                        r="68.5"
-                        fill="url(#paint2_radial_116:1137)"
-                      />
-                      <g opacity="0.8" filter="url(#filter0_f_116:1137)">
-                        <circle
-                          cx="233.543"
-                          cy="49.2645"
-                          r="28.2059"
-                          fill="white"
-                        />
-                      </g>
-                    </g>
-                    <path
-                      d="M0 182H83.5V209H150.5V178H169.5V148.5C169.5 148.5 194 165 229.5 165C265 165 294 134.5 294 134.5V152H306.5H361V178H435V152H474"
-                      stroke="white"
-                      stroke-opacity="0.08"
-                      stroke-width="2"
-                    />
-                    <defs>
-                      <filter
-                        id="filter0_f_116:1137"
-                        x="175.337"
-                        y="-8.94141"
-                        width="116.412"
-                        height="116.412"
-                        filterUnits="userSpaceOnUse"
-                        color-interpolation-filters="sRGB"
-                      >
-                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                        <feBlend
-                          mode="normal"
-                          in="SourceGraphic"
-                          in2="BackgroundImageFix"
-                          result="shape"
-                        />
-                        <feGaussianBlur
-                          stdDeviation="15"
-                          result="effect1_foregroundBlur_116:1137"
-                        />
-                      </filter>
-                      <linearGradient
-                        id="paint0_linear_116:1137"
-                        x1="25"
-                        y1="183"
-                        x2="126.155"
-                        y2="27.0837"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#4A6CF7" stop-opacity="0" />
-                        <stop offset="1" stop-color="#4A6CF7" />
-                      </linearGradient>
-                      <linearGradient
-                        id="paint1_linear_116:1137"
-                        x1="307"
-                        y1="153"
-                        x2="408.155"
-                        y2="-2.91631"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#4A6CF7" stop-opacity="0" />
-                        <stop offset="1" stop-color="#4A6CF7" />
-                      </linearGradient>
-                      <radialGradient
-                        id="paint2_radial_116:1137"
-                        cx="0"
-                        cy="0"
-                        r="1"
-                        gradientUnits="userSpaceOnUse"
-                        gradientTransform="translate(227.5 81.5) rotate(90) scale(73.5368)"
-                      >
-                        <stop stop-opacity="0.47" />
-                        <stop offset="1" stop-opacity="0" />
-                      </radialGradient>
-                    </defs>
-                  </svg>
-                </div>
-                <h3
-                  class="
-                    a1g a1A
-                    dark:aI
-                    a1O
-                    sm:a1P
-                    a1Q
-                  "
-                >
-                  Comming Soon
-                </h3>
-                <p
-                  class="
-                    a1R a1S aH
-                    sm:a1T
-                    a1U
-                    sm:a1U
-                    a1V
-                  "
-                >
-                  Notre système de blog est en conception. Il sera bientôt disponible.
-                </p>
+   <!-- ====== Page Title Section Start -->
+   <section class="ad a1H a1I[150px] a2p">
+    <div class="aa">
+      <div class="a8 a1K a9 ab[-16px]">
+        <div class="a7 md:a2q/12 lg:a2r/12 ae">
+          <div class="aB[570px] a2s md:a2t">
+            <h1
+              class="
+                a1g a1A
+                dark:aI
+                a2u
+                sm:a1O
+                a2v
+              "
+            >
+              Nos articles
+            </h1>
+            <p
+              class="
+                a1R
+                aH
+                a1S
+                a1U
+              "
+            >
+            Laissez-vous informer par notre blog. Nos articles sont rédigés avec soin afin de vous être utiles.
+            </p>
+          </div>
+        </div>
+        <div class="a7 md:a20/12 lg:a1D/12 ae">
+          <div class="a2w">
+            <ul class="a8 a9 md:a1d">
+              <li class="a8 a9">
                 <a
                   href="{{route('home')}}"
                   class="
-                    aH
-                    a1g
-                    aI
-                    a1k
-                    a1i
-                    a1l
-                    md:a1m
-                    lg:a1l
-                    xl:a1m
-                    hover:aw hover:a1W
-                    a1n a13
+                    a1R aH a1S a2x
+                    hover:a1W
                   "
                 >
-                  Revenir à l'acceuil
+                  Acceuil
                 </a>
-              </div>
-            </div>
+                <span
+                  class="
+                    ah
+                    aU
+                    aV
+                    a2y
+                    aX
+                    a2z
+                    aZ
+                    a2A
+                  "
+                ></span>
+              </li>
+              <li class="a1R aH a1W">
+                Articles
+              </li>
+            </ul>
           </div>
         </div>
-        <div
-          class="
-            aj
-            sm:ah
-            a3 a5 a1X a1Y[-1]
-          "
+      </div>
+    </div>
+
+    <div>
+      <span class="a3 a4 a5 a1Y[-1]">
+        <svg
+          width="287"
+          height="254"
+          viewBox="0 0 287 254"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            width="406"
-            height="286"
-            viewBox="0 0 406 286"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g opacity="0.5">
-              <rect
-                opacity="0.5"
-                x="56.25"
-                y="110.344"
-                width="116.719"
-                height="116.438"
-                stroke="url(#paint0_linear_116:1140)"
-              />
-              <rect
-                opacity="0.1"
-                x="56.25"
-                y="110.344"
-                width="116.719"
-                height="116.438"
-                fill="url(#paint1_linear_116:1140)"
-              />
-              <path
-                opacity="0.5"
-                d="M172.688 110.344L229.219 51V167.601L172.688 226.781V110.344Z"
-                stroke="url(#paint2_linear_116:1140)"
-              />
-              <path
-                opacity="0.1"
-                d="M172.688 110.344L229.219 51V167.601L172.688 226.781V110.344Z"
-                fill="url(#paint3_linear_116:1140)"
-              />
-              <path
-                opacity="0.5"
-                d="M0 169.619L56.25 110.344V226.85L0 286.125V169.619Z"
-                stroke="url(#paint4_linear_116:1140)"
-              />
-              <path
-                opacity="0.1"
-                d="M0 169.619L56.25 110.344V226.85L0 286.125V169.619Z"
-                fill="url(#paint5_linear_116:1140)"
-              />
-              <rect
-                opacity="0.5"
-                x="228.938"
-                y="51.2812"
-                width="119.25"
-                height="116.438"
-                stroke="url(#paint6_linear_116:1140)"
-              />
-              <rect
-                opacity="0.1"
-                x="228.938"
-                y="51.2812"
-                width="119.25"
-                height="116.438"
-                fill="url(#paint7_linear_116:1140)"
-              />
-              <path
-                opacity="0.5"
-                d="M347.906 51.2812L405 2V110.113L347.906 167.719V51.2812Z"
-                stroke="url(#paint8_linear_116:1140)"
-              />
-              <path
-                opacity="0.1"
-                d="M347.906 51.2812L405 2V110.113L347.906 167.719V51.2812Z"
-                fill="url(#paint9_linear_116:1140)"
-              />
-            </g>
-            <defs>
-              <linearGradient
-                id="paint0_linear_116:1140"
-                x1="49.0781"
-                y1="112.313"
-                x2="148.922"
-                y2="131.859"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_116:1140"
-                x1="179.141"
-                y1="209.062"
-                x2="32.6026"
-                y2="145.47"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_116:1140"
-                x1="170.016"
-                y1="125.25"
-                x2="217.542"
-                y2="125.507"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_116:1140"
-                x1="233.578"
-                y1="113.156"
-                x2="146.509"
-                y2="143.95"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_116:1140"
-                x1="-3.45633"
-                y1="113.316"
-                x2="46.311"
-                y2="116.426"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint5_linear_116:1140"
-                x1="69.8907"
-                y1="189.234"
-                x2="84.0124"
-                y2="249.947"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint6_linear_116:1140"
-                x1="218.953"
-                y1="157.453"
-                x2="330.261"
-                y2="148.369"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint7_linear_116:1140"
-                x1="348.187"
-                y1="46.6406"
-                x2="280.112"
-                y2="168.552"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint8_linear_116:1140"
-                x1="329"
-                y1="190"
-                x2="369.525"
-                y2="-29.8829"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint9_linear_116:1140"
-                x1="409"
-                y1="10"
-                x2="331.729"
-                y2="34.2741"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div
-          class="aj sm:ah a3 a4 a_ a1Y[-1]"
+          <path
+            opacity="0.1"
+            d="M286.5 0.5L-14.5 254.5V69.5L286.5 0.5Z"
+            fill="url(#paint0_linear_111:578)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_111:578"
+              x1="-40.5"
+              y1="117"
+              x2="301.926"
+              y2="-97.1485"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#4A6CF7" />
+              <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="a3 a_ a4 a1Y[-1]">
+        <svg
+          width="628"
+          height="258"
+          viewBox="0 0 628 258"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            width="406"
-            height="286"
-            viewBox="0 0 406 286"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g opacity="0.5">
-              <rect
-                opacity="0.5"
-                x="57.25"
-                y="108.344"
-                width="116.719"
-                height="116.438"
-                stroke="url(#paint0_linear_116:1151)"
-              />
-              <rect
-                opacity="0.1"
-                x="57.25"
-                y="108.344"
-                width="116.719"
-                height="116.438"
-                fill="url(#paint1_linear_116:1151)"
-              />
-              <path
-                opacity="0.5"
-                d="M173.688 108.344L230.219 49V165.601L173.688 224.781V108.344Z"
-                stroke="url(#paint2_linear_116:1151)"
-              />
-              <path
-                opacity="0.1"
-                d="M173.688 108.344L230.219 49V165.601L173.688 224.781V108.344Z"
-                fill="url(#paint3_linear_116:1151)"
-              />
-              <path
-                opacity="0.5"
-                d="M1 167.619L57.25 108.344V224.85L1 284.125V167.619Z"
-                stroke="url(#paint4_linear_116:1151)"
-              />
-              <path
-                opacity="0.1"
-                d="M1 167.619L57.25 108.344V224.85L1 284.125V167.619Z"
-                fill="url(#paint5_linear_116:1151)"
-              />
-              <rect
-                opacity="0.5"
-                x="229.938"
-                y="49.2812"
-                width="119.25"
-                height="116.438"
-                stroke="url(#paint6_linear_116:1151)"
-              />
-              <rect
-                opacity="0.1"
-                x="229.938"
-                y="49.2812"
-                width="119.25"
-                height="116.438"
-                fill="url(#paint7_linear_116:1151)"
-              />
-              <path
-                opacity="0.5"
-                d="M348.906 49.2812L406 0V108.113L348.906 165.719V49.2812Z"
-                stroke="url(#paint8_linear_116:1151)"
-              />
-              <path
-                opacity="0.1"
-                d="M348.906 49.2812L406 0V108.113L348.906 165.719V49.2812Z"
-                fill="url(#paint9_linear_116:1151)"
-              />
-            </g>
-            <defs>
-              <linearGradient
-                id="paint0_linear_116:1151"
-                x1="50.0781"
-                y1="110.313"
-                x2="149.922"
-                y2="129.859"
-                gradientUnits="userSpaceOnUse"
+          <path
+            opacity="0.1"
+            d="M669.125 257.002L345.875 31.9983L524.571 -15.8832L669.125 257.002Z"
+            fill="url(#paint0_linear_0:1)"
+          />
+          <path
+            opacity="0.1"
+            d="M0.0716344 182.78L101.988 -15.0769L142.154 81.4093L0.0716344 182.78Z"
+            fill="url(#paint1_linear_0:1)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_0:1"
+              x1="644"
+              y1="221"
+              x2="429.946"
+              y2="37.0429"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#4A6CF7" />
+              <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_0:1"
+              x1="18.3648"
+              y1="166.016"
+              x2="105.377"
+              y2="32.3398"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#4A6CF7" />
+              <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+    </div>
+  </section>
+  <!-- ====== Page Title Section End -->
+
+  <!-- ====== Blog Section Start -->
+  <section class="a1I[120px] a1J[120px]">
+    <div class="aa">
+      <div class="a8 a1K ab[-16px] a1x">
+
+        @foreach ($posts as $post)
+            <div class="a7 md:aU/3 lg:a1_/2 xl:a1_/3 ae">
+            <div
+                class="
+                ad aw
+                dark:av
+                a33 a13 a2p a1V
+                wow
+                fadeInUp
+                "
+                data-wow-delay=".15s"
+            >
+                <a
+                href="{{route('post',$post->id)}}"
+                class="a7 ah ad"
+                >
+                <span
+                    class="
+                    a3
+                    a34
+                    a35
+                    a1k
+                    a1w
+                    aM
+                    a9
+                    a1x
+                    aK
+                    ae
+                    a2P
+                    a1b
+                    aI
+                    "
+                >
+                    {{$post->category->name}}
+                </span>
+                <img
+                    src="{{asset($post->image)}}"
+                    alt="image"
+                    class="a7"
+                />
+                </a>
+                <div
+                class="
+                    a36
+                    sm:a2Y
+                    md:ai md:az
+                    lg:a2Y
+                    xl:ai xl:a37
+                    2xl:a2Y
+                "
+                >
+                <h3>
+                    <a
+                    href="{{route('post',$post->id)}}"
+                    class="
+                        a1g a1A
+                        dark:aI
+                        a27
+                        sm:a2u
+                        ah a1Q
+                        hover:a1W
+                        dark:hover:a1W
+                    "
+                    >
+                    {{$post->getTitle()}}
+                    </a>
+                </h3>
+                <p
+                    class="
+                    aH
+                    a1S
+                    a1R
+                    a38
+                    a2E
+                    a2B
+                    a2z
+                    a2M
+                    dark:a2o dark:a2M
+                    "
+                >
+                {{substr($post->content,3,88)}}...
+                </p>
+                <div class="a8 a9">
+                    <div
+                    class="
+                        a8 a9 a39 a2O
+                        xl:a3a
+                        2xl:a39
+                        xl:a2A
+                        2xl:a2O
+                        a3b a2z a2M
+                        dark:a2o dark:a2M
+                    "
+                    >
+                    <div
+                        class="
+                        aB[40px]
+                        a7
+                        at[40px]
+                        a1w
+                        a2p
+                        a2G
+                        "
+                    >
+                        <img
+                        src="images/blog/author-02.png"
+                        alt="author"
+                        class="a7"
+                        />
+                    </div>
+                    <div class="a7">
+                        <h4
+                        class="
+                            a1b a1R a1h
+                            dark:aI
+                            a2K
+                        "
+                        >
+                        By
+                        <a
+                            href="javascript:void(0)"
+                            class="
+                            a1h
+                            dark:aI
+                            hover:a1W
+                            dark:hover:a1W
+                            "
+                        >
+                        {{$post->user->name}}
+                        </a>
+                        </h4>
+                        <p class="a3c a1S">
+                        Content Writer
+                        </p>
+                    </div>
+                    </div>
+                    <div class="a22">
+                    <h4
+                        class="
+                        a1b a1R a1h
+                        dark:aI
+                        a2K
+                        "
+                    >
+                        Date
+                    </h4>
+                    <p class="a3c a1S">{{$post->created_at}}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        @endforeach
+
+      </div>
+
+      <div
+        class="a8 a1K ab[-16px] wow fadeInUp"
+        data-wow-delay=".15s"
+      >
+        <div class="a7 ae">
+            {{-- {{ $posts->links() }} --}}
+            {{-- {{$posts->links}} --}}
+          <ul class="a8 a9 a3d a1x">
+            <li class="a3e">
+              <a
+                href="javascript:void(0)"
+                class="
+                  a8
+                  a9
+                  a1x
+                  a13
+                  a3f
+                  a3g[15%]
+                  hover:a1k hover:a31
+                  a1p
+                  hover:aI
+                  a1S ae a1b a3h[36px] a1t
+                "
               >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_116:1151"
-                x1="180.141"
-                y1="207.062"
-                x2="33.6026"
-                y2="143.47"
-                gradientUnits="userSpaceOnUse"
+                Prev
+              </a>
+            </li>
+            <li class="a3e">
+              <a
+                href="javascript:void(0)"
+                class="
+                  a8
+                  a9
+                  a1x
+                  a13
+                  a3f
+                  a3g[15%]
+                  hover:a1k hover:a31
+                  a1p
+                  hover:aI
+                  a1S ae a1b a3h[36px] a1t
+                "
               >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint2_linear_116:1151"
-                x1="171.016"
-                y1="123.25"
-                x2="218.542"
-                y2="123.507"
-                gradientUnits="userSpaceOnUse"
+                1
+              </a>
+            </li>
+            <li class="a3e">
+              <a
+                href="javascript:void(0)"
+                class="
+                  a8
+                  a9
+                  a1x
+                  a13
+                  a3f
+                  a3g[15%]
+                  hover:a1k hover:a31
+                  a1p
+                  hover:aI
+                  a1S ae a1b a3h[36px] a1t
+                "
               >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint3_linear_116:1151"
-                x1="234.578"
-                y1="111.156"
-                x2="147.509"
-                y2="141.95"
-                gradientUnits="userSpaceOnUse"
+                2
+              </a>
+            </li>
+            <li class="a3e">
+              <a
+                href="javascript:void(0)"
+                class="
+                  a8
+                  a9
+                  a1x
+                  a13
+                  a3f
+                  a3g[15%]
+                  hover:a1k hover:a31
+                  a1p
+                  hover:aI
+                  a1S ae a1b a3h[36px] a1t
+                "
               >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint4_linear_116:1151"
-                x1="85.5"
-                y1="71.5"
-                x2="100.174"
-                y2="270.716"
-                gradientUnits="userSpaceOnUse"
+                3
+              </a>
+            </li>
+            <li class="a3e">
+              <a
+                href="javascript:void(0)"
+                class="
+                  a8
+                  a9
+                  a1x
+                  a13
+                  a3f
+                  a3g[15%]
+                  a1S
+                  ae
+                  a1b
+                  a3h[36px]
+                  a1t
+                  a3i
+                "
               >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint5_linear_116:1151"
-                x1="70.8907"
-                y1="187.234"
-                x2="85.0124"
-                y2="247.947"
-                gradientUnits="userSpaceOnUse"
+                ...
+              </a>
+            </li>
+            <li class="a3e">
+              <a
+                href="javascript:void(0)"
+                class="
+                  a8
+                  a9
+                  a1x
+                  a13
+                  a3f
+                  a3g[15%]
+                  hover:a1k hover:a31
+                  a1p
+                  hover:aI
+                  a1S ae a1b a3h[36px] a1t
+                "
               >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint6_linear_116:1151"
-                x1="219.953"
-                y1="155.453"
-                x2="331.261"
-                y2="146.369"
-                gradientUnits="userSpaceOnUse"
+                12
+              </a>
+            </li>
+            <li class="a3e">
+              <a
+                href="javascript:void(0)"
+                class="
+                  a8
+                  a9
+                  a1x
+                  a13
+                  a3f
+                  a3g[15%]
+                  hover:a1k hover:a31
+                  a1p
+                  hover:aI
+                  a1S ae a1b a3h[36px] a1t
+                "
               >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint7_linear_116:1151"
-                x1="349.187"
-                y1="44.6406"
-                x2="281.112"
-                y2="166.552"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint8_linear_116:1151"
-                x1="394.75"
-                y1="64.3284"
-                x2="409.531"
-                y2="110.901"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" stop-opacity="0" />
-                <stop offset="1" stop-color="#4A6CF7" />
-              </linearGradient>
-              <linearGradient
-                id="paint9_linear_116:1151"
-                x1="410"
-                y1="8.00001"
-                x2="332.729"
-                y2="32.2741"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#4A6CF7" />
-                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
+                Next
+              </a>
+            </li>
+          </ul>
         </div>
-      </section>
-      <!-- ====== 404 Section End -->
+      </div>
+    </div>
+  </section>
+  <!-- ====== Blog Section End -->
 
 @endsection

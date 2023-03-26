@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title')</title>
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/glightbox.min.css" />
+    <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/glightbox.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/tailwind.css')}}" />
-
-    <script src="js/wow.min.js"></script>
+    @yield('style')
+    <script src="{{asset('js/wow.min.js')}}"></script>
     <script>
       // ===== wow js
       new WOW().init();
@@ -40,12 +40,12 @@
           <div class="ae af ag">
             <a href="{{route('home')}}" class="a7 ah ai header-logo">
               <img
-                src="images/logo/logoP2GPartners.png"
+                src="{{asset('images/logo/logoP2GPartners.png')}}"
                 alt="logo"
                 class="a7 dark:aj"
               />
               <img
-                src="images/logo/logoP2GPartnerswWhite.png"
+                src="{{asset('images/logo/logoP2GPartnerswWhite.png')}}"
                 {{-- src="images/logo/logoP2GPartnersBlueWhite.png" --}}
                 alt="logo"
                 class="a7 aj dark:ah"
@@ -230,6 +230,24 @@
                       Contact
                     </a>
                   </li>
+				  <li class="ad aG">
+                    <a
+                      href="https://p2gpartners.com:2096"
+                      target="_blank"
+                      class="
+                        aH
+                        text-dark
+                        dark:aI
+                        group-hover:aJ
+                        aK
+                        lg:aL lg:aM lg:aN
+                        a8 aO
+                        lg:aP lg:aQ
+                        xl:aR
+                      "
+                    >
+                      Webmail
+                    </a>
                   {{-- <li class="ad aG submenu-item">
                     <a
                       href="javascript:void(0)"
@@ -498,13 +516,13 @@
             <div class="a21 aB[360px]">
               <a href="{{route('home')}}" class="a22 a23">
                 <img
-                  src="images/logo/logoP2GPartners.png"
+                  src="{{asset('images/logo/logoP2GPartners.png')}}"
                   alt="logo"
                   class="a7 dark:aj"
                   style="height: 50px;"
                 />
                 <img
-                src="images/logo/logoP2GPartnerswWhite.png"
+                src="{{asset('images/logo/logoP2GPartnerswWhite.png')}}"
                 {{-- src="images/logo/logoP2GPartnersBlueWhite.png" --}}
                   alt="logo"
                   class="a7 aj dark:ah"
@@ -1033,8 +1051,8 @@
 
     <!-- ====== All Scripts -->
 
-    <script src="js/glightbox.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/glightbox.min.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
     <script>
       // ==== pricing plan toggler
       let togglePlan = document.querySelector("#togglePlan");
