@@ -1,0 +1,129 @@
+.align-center {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+
+.mce-content-body {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+figure {
+    display: table;
+    margin: 1rem auto;
+}
+
+figure.align-left {
+    float: left;
+}
+figure figcaption {
+    color: #999;
+    display: block;
+    margin-top: .25rem;
+    text-align: center;
+}
+
+iframe {
+    border: 1px solid gray;
+    display: inline-block;
+    line-height: 0;
+    margin: 0 2px 0 2px;
+    position: relative;
+}
+
+.lg\:a2q\/12 {
+    width: 76.666667%;
+}
+
+iframe {
+    /* display: table; */
+    margin: 1rem ;
+}
+
+:not(pre)>code[class*=language-], pre[class*=language-] {
+    background: #f5f2f0;
+}
+
+
+.token.keyword {
+    color: #07a;
+}
+
+
+figure.image {
+    display: inline-block;
+    margin: 0 2px 0 1px;
+  }
+
+  figure.align-left {
+    float: left;
+  }
+
+  figure.align-right {
+    float: right;
+  }
+
+  figure.image img {
+    margin: 8px 8px 0 8px;
+  }
+
+  figure.image figcaption {
+    margin: 6px 8px 6px 8px;
+    text-align: center;
+  }
+
+
+  /*
+   Alignment using classes rather than inline styles
+   check out the "formats" option
+  */
+
+  img.align-left {
+    float: left;
+  }
+
+  img.align-right {
+    float: right;
+  }
+
+  /* Basic styles for Table of Contents plugin (toc) */
+  .mce-toc {
+    border: 1px solid gray;
+  }
+
+  .mce-toc h2 {
+    margin: 4px;
+  }
+
+  .mce-toc li {
+    list-style-type: none;
+  }
+
+  figure.image.align-center {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+iframe {
+  max-width: 100%;
+}

@@ -21,7 +21,7 @@ class PageContoller extends Controller
     }
 
     public function posts(){
-        $posts = Post::orderBy('created_at','desc')->simplePaginate(2);
+        $posts = Post::orderBy('created_at','desc')->simplePaginate(6);
         // $posts = Post::orderBy('created_at','desc')->paginate(1);
 
 

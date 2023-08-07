@@ -99,8 +99,9 @@ class UserListScreen extends Screen
      */
     public function asyncGetUser(User $user): iterable
     {
+
         return [
-            'user' => $user,
+            'user' => User::find(1),
         ];
     }
 

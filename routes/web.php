@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\PageContoller;
+use App\Http\Controllers\CandidateController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -10,25 +10,66 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::get('/',[PageContoller::class,'index'])->name('home');
-Route::get('/about',[PageContoller::class,'about'])->name('about');
-Route::get('/services',[PageContoller::class,'services'])->name('services');
-Route::get('/posts',[PageContoller::class,'posts'])->name('posts');
-Route::get('/post/{post}',[PageContoller::class,'post'])->name('post');
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 
+Route::get('/candidat/{candidate}/detail', [CandidateController::class,'detail'])->name('profil');
 
-Route::get('/contact',[ContactController::class,'contact'])->name('contact');
-Route::post('/contact',[ContactController::class,'submitMessage'])->name('contact');
+Route::get('/candidates', [CandidateController::class,'list'])->name('candidates');
 
 
+Route::get('/stat-ceni', function () {
+    return view('statistique.ceni-stat');
+})->name('stat.ceni');
+Route::get('/stat-our', function () {
+    return view('statistique.our-stat');
+})->name('stat.our');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+
+Route::get('/image', function (Request $request) {
+
+    $path= str_replace("\\","/",public_path('/storage/2023/04/20/e8e72efeedacc3dbb3a06dc92501301b90e0a3f7.png'));
+    $type = pathinfo($path, PATHINFO_EXTENSION);
+    $data = file_get_contents($path);
+    $imageBase64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+    // dd($imageBase64);
+
+    $pp= str_replace("\\","/",public_path('/assets/img/team/profile-picture-4.jpg'));
+    // dd($pp);
+    return "<img src='{$imageBase64}' alt='sample' class='mw-100 d-block img-fluid rounded-1 w-100'>";
+
+    // return asset('/storage/2023/04/20/e8e72efeedacc3dbb3a06dc92501301b90e0a3f7.png')
+    dd(asset('/storage/2023/04/20/e8e72efeedacc3dbb3a06dc92501301b90e0a3f7.png'));
+    dd($request);
+    if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $imageData = base64_encode(file_get_contents($file));
+
+        // $image = new Image;
+        // $image->data = $imageData;
+        // $image->save();
+    }
+
+    $file = $request->file('image');
+    dd($file);
+    $imageData = base64_encode(file_get_contents($file));
+    dd($imageData,$request);
+
+})->name('image');

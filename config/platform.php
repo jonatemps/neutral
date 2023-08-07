@@ -110,7 +110,10 @@ return [
 
     'resource'      => [
         'stylesheets' => [],
-        'scripts'     => [],
+        'scripts'     => [
+            '/js/platform/tinymce/tinymce/tinymce.min.js',
+            '/js/platform/tinymce/tinymce.js',
+        ],
     ],
 
     /*

@@ -1,0 +1,36 @@
+#chartWhiteIcon {
+  width: 100%;
+  height: 500px;
+}
+
+
+#chartWithCicle {
+    width: 100%;
+    height: 500px
+  }
+
+#twoPieChart {
+    width: 100%;
+    height: 500px
+}
+
+#mapDRC {
+    width: 100%;
+    height: 500px;
+}
+
+#treeChart {
+    width: 100%;
+    max-width: 100%;
+    height: 550px;
+  }
+
+#topVisitChart {
+    width: 100%;
+    height: 600px;
+}
+
+#tagCloud {
+    width: 100%;
+    height: 600px;
+}
