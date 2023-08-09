@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Figure;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PageContoller extends Controller
 {
-    public function index(){
-        return view('index');
+    public function home(){
+        $figures = Figure::limit(15)->get();
+        // dd($figures );
+        return view('home',['figures' => $figures]);
     }
 
     public function about(){

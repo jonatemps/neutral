@@ -88,7 +88,22 @@
                         <div class="autoplay-carousel owl-carousel owl-theme owl-loaded owl-drag">
                             <div class="owl-stage-outer">
                                 <div class="owl-stage" style="transform: translate3d(-1866px, 0px, 0px); transition: all 0.25s ease 0s; width: 3360px;">
-                                    <div class="owl-item cloned" style="width: 363.333px; margin-right: 10px;">
+                                    @foreach ($figures as $figure)
+                                        <div class="owl-item" style="width: 363.333px; margin-right: 10px;">
+                                            <div class="item p-3">
+                                                <div class="card bg-primary shadow-soft border-light">
+                                                    <div class="card-header p-4">
+                                                        <img src="{{$figure->photo}}" class="card-img-top rounded" alt="Wood Portrait">
+                                                    </div>
+                                                    <div class="card-body pt-2">
+                                                        <h3 class="h5 mb-2">{{$figure->name}}</h3>
+                                                        <p class="card-text">{{$figure->words}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                    {{-- <div class="owl-item cloned" style="width: 363.333px; margin-right: 10px;">
                                         <div class="item p-3">
                                             <div class="card bg-primary shadow-soft border-light">
                                                 <div class="card-header p-4">
@@ -100,8 +115,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 363.333px; margin-right: 10px;">
+                                    </div> --}}
+                                    {{-- <div class="owl-item cloned" style="width: 363.333px; margin-right: 10px;">
                                         <div class="item p-3">
                                             <div class="card bg-primary shadow-soft border-light">
                                                 <div class="card-header p-4">
@@ -178,7 +193,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="owl-nav disabled">

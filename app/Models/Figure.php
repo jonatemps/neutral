@@ -11,4 +11,11 @@ use Orchid\Screen\AsSource;
 class Figure extends Model
 {
     use HasFactory,AsSource, Filterable, Attachable;
+
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
 }

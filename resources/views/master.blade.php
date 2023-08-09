@@ -89,6 +89,7 @@
         }
 </style>
 @yield('style')
+@livewireStyles
 </head>
 
 <body>
@@ -315,6 +316,7 @@
 <!-- Neumorphism JS -->
 <script src="{{asset('./assets/js/neumorphism.js')}}"></script>
 
+@livewireScripts
 </body>
 
 </html>

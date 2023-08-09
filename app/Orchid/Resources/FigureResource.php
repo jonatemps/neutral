@@ -7,7 +7,11 @@ use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\TextArea;
+use Orchid\Crud\ResourceRequest;
 use Orchid\Screen\TD;
+use Illuminate\Support\Facades\File;
+use Illuminate\Database\Eloquent\Model;
+
 
 class FigureResource extends Resource
 {
@@ -30,8 +34,8 @@ class FigureResource extends Resource
              ->title('Nom'),
              Cropper::make('photo')
              ->title('Photo')
-             ->width(315.78)
-             ->height(175),
+             ->width(281)
+             ->height(281),
              TextArea::make('words')
              ->title('Mot')
         ];
@@ -77,5 +81,65 @@ class FigureResource extends Resource
     public function filters(): array
     {
         return [];
+    }
+
+    public function onSave(ResourceRequest $request, Model $model)
+    {
+
+        // dd($request->input('photo'));
+        // $model->isDirty('photo');
+        // $model->isClean('photo');
+
+        $model->photo = $request->input('photo');
+
+        // si le photo a changé
+
+        if ($model->isDirty('photo')) {
+
+            // dd('photo chagé',$model->isDirty('photo'),public_path($request->input('photo')));
+            $path_photo = str_replace("\\","/",public_path($request->input('photo')));
+            $type = pathinfo($path_photo, PATHINFO_EXTENSION);
+            $data = file_get_contents($path_photo);
+            $imageBase64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+            // dd($model,$imageBase64,$request->input('photo'));
+
+            // $data = [
+            //     'name' => $request->input('name'),
+            //     'photo' => $imageBase64,
+            //     'words' =>$request->input('words'),
+            // ];
+            // $model->fill($data);
+            $model->name = $request->input('name');
+            $model->photo = $imageBase64;
+            $model->words = $request->input('words');
+            $model->save();
+
+        }
+
+        $model->name = $request->input('name');
+        $model->words = $request->input('words');
+        $model->save();
+
+        // si le photo n'a pas changé
+        // if ($model->isClean('photo')) {
+        //     $model->fill($request->input());
+        //     $model->save();
+        // }
+
+        $image_path = public_path($request->input('photo'));
+        if (File::exists($image_path)) {
+            File::delete($image_path);
+        }
+
+        $folder_path = public_path('/storage');
+
+        if (File::isDirectory($folder_path)) {
+            $directories = File::directories($folder_path);
+            foreach ($directories as $directory) {
+                File::deleteDirectory($directory);
+            }
+        }
+
     }
 }

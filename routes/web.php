@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\PageContoller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/',[PageContoller::class,'home'])->name('home');
 
 Route::get('/candidat/{candidate}/detail', [CandidateController::class,'detail'])->name('profil');
 
