@@ -5,14 +5,49 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Figure;
 use App\Models\Post;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 class PageContoller extends Controller
 {
     public function home(){
+        $provs = array();
+
+
+        // dd(json_encode($tab));
+
+        $provinces = Province::limit(2)->get();
+
+
+
+        foreach ($provinces as $key => $province) {
+
+            $tabCirc  = array();
+
+            foreach ($province->circonscriptions as $key => $circonscription) {
+                // array_push($tabCirc, $circonscription->name);
+                // dd($tabCirc);
+                array_push($tabCirc,
+                    [
+                        'name' => $circonscription->name,
+                        'value' => $circonscription->elector_number,
+                    ],
+                );
+
+            }
+
+            $tab['name'] = $province->name;
+            $tab['children'] = $tabCirc;
+
+            array_push($provs,$tab);
+            // dd($tab);
+
+        }
+        $provs = json_encode($provs);
+        // dd($provs);
+
         $figures = Figure::limit(15)->get();
-        // dd($figures );
-        return view('home',['figures' => $figures]);
+        return view('home',['figures' => $figures,'provs' => $provs]);
     }
 
     public function about(){

@@ -45,6 +45,26 @@ class Candidate extends Model
         return $this->belongsTo(Party::class,'id_party');
     }
 
+    public function diplomas()
+    {
+        return $this->hasMany(Diploma::class);
+    }
+
+    public function experiences()
+    {
+        return $this->hasMany(Experience::class);
+    }
+
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
+
     public function memo()
     {
         return $this->belongsTo(Memo::class,'id','candidate_id');

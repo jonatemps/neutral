@@ -2,6 +2,11 @@
     <!-- Section -->
     <div class="section section-lg pt-4 px-4 pb-0">
         <div class="container">
+            @if (session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-9 col-sm-9">
                     <div class="form-group">
@@ -12,7 +17,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><span class="fas fa-search"></span></span>
                             </div>
-                            <input class="form-control" id="exampleInputIcon1" placeholder="Icon Left" type="text" aria-label="Input with icon left">
+                            <input class="form-control" wire:model="searchBar" id="exampleInputIcon1" placeholder="Icon Left" type="text" aria-label="Input with icon left">
                         </div>
                     </div>
                 </div>
@@ -22,70 +27,72 @@
                         <span class="h6 font-weight-bold">Recherche avancée</span>
                     </div>
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Activer/Désactiver</label>
+                        <input type="checkbox" wire:model="searchAdvenced" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Activer/Désactiver</label>{{$searchAdvenced}}
                     </div>
                 </div>
             </div>
 
-            <div class="row mb-4 mb-lg-5">
-                <div class="col-lg-6 col-sm-6 border-carer ">
-                    {{-- <div class="mb-3">
-                        <span class="h6 font-weight-bold">Checkboxes Round</span>
-                    </div> --}}
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck555" checked>
-                        <label class="form-check-label" for="defaultCheck555">
-                        Députation Provinciale
-                        </label>
+            @if ($searchAdvenced)
+                <div class="row mb-4 mb-lg-5">
+                    <div class="col-lg-6 col-sm-6 border-carer ">
+                        {{-- <div class="mb-3">
+                            <span class="h6 font-weight-bold">Checkboxes Round</span>
+                        </div> --}}
+                        <div class="form-check">
+                            <input class="form-check-input" wire:model="DepProv" type="checkbox" value="1" id="defaultCheck555" checked>
+                            <label class="form-check-label" for="defaultCheck555">
+                            Députation Provinciale {{$DepProv}}
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" wire:model="DepNatoin" type="checkbox" value="2" id="defaultCheck666">
+                            <label class="form-check-label" for="defaultCheck666">
+                                Députation Nationnale {{$DepNatoin}}
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" wire:model="Presidence" type="checkbox" value="3" id="defaultCheck777">
+                            <label class="form-check-label" for="defaultCheck777">
+                                Présidentielle {{$Presidence}}
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck666">
-                        <label class="form-check-label" for="defaultCheck666">
-                            Députation Nationnale
-                        </label>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="disabledSelect">Parti Politique</label>
+                            <select id="disabledSelect" wire:model="party" class="form-control">
+                                <option value="tous">Tous</option>
+                                @foreach ($parties as $party)
+                                    <option value="{{$party['id']}}">{{$party['name']}} -{{$party['id']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck777">
-                        <label class="form-check-label" for="defaultCheck777">
-                            Présidentielle
-                        </label>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="disabledSelect">Province</label>
+                            <select id="disabledSelect" wire:model="province" class="form-control">
+                                <option value="tous">Tous</option>
+                                @foreach ($provinces as $province)
+                                    <option value="{{$province['id']}}">{{$province['name']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="form-group">
+                            <label for="disabledSelect">Circonscription</label>
+                            <select id="disabledSelect" wire:model="circumpcription" class="form-control">
+                                <option value="tous">Tous</option>
+                                @foreach ($circumpcriptions as $circumpcription)
+                                    <option value="{{$circumpcription['id']}}">{{$circumpcription['name']}} -{{$circumpcription['id']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="form-group">
-                        <label for="disabledSelect">Parti Politique</label>
-                        <select id="disabledSelect" class="form-control">
-                            <option>Disabled select</option>
-                            <option value="1">United States</option>
-                            <option value="2">Germany</option>
-                            <option value="3">Canada</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="form-group">
-                        <label for="disabledSelect">Province</label>
-                        <select id="disabledSelect" class="form-control">
-                            <option>Disabled select</option>
-                            <option value="1">United States</option>
-                            <option value="2">Germany</option>
-                            <option value="3">Canada</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="form-group">
-                        <label for="disabledSelect">Circonscription</label>
-                        <select id="disabledSelect" class="form-control">
-                            <option>Disabled select</option>
-                            <option value="1">United States</option>
-                            <option value="2">Germany</option>
-                            <option value="3">Canada</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
     </div>
     <!-- End of Section -->
@@ -99,15 +106,18 @@
                 <h2 class="h1">Les candidats :</h2>
             </div> --}}
             <div class="row align-items-center">
-                @foreach ($candidates as $candidate)
-
+                @foreach ($candidatures as $candidature)
+{{--
+                    @php
+                        dd($candidature->mandates)
+                    @endphp --}}
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card bg-primary shadow-soft border-light text-center">
                             <div class="card-header px-3 py-3">
-                                <div class="profile-cover rounded" data-background="{{$candidate->party->logo}}" style="background-image: url(&quot;{{$candidate->party->logo}}&quot;);">
+                                <div class="profile-cover rounded" data-background="{{$candidature->candidate->party->logo}}" style="background-image: url(&quot;{{$candidature->candidate->party->logo}}&quot;);">
                                 </div>
                                 <div class="profile-image-small bg-primary rounded-circle shadow-inset p-2 border border-light mx-auto mt-n6">
-                                    <img src="{{$candidate->photo}}" class="card-img-top rounded-circle" alt="Bonnie Avatar">
+                                    <img src="{{$candidature->candidate->photo}}" class="card-img-top rounded-circle" alt="Bonnie Avatar">
                                 </div>
                             </div>
                             <div class="card-body pt-2">
@@ -116,24 +126,24 @@
                                     <span class="fas fa-medal mr-2" style="color: rgb(18, 177, 240);"></span>
                                     <span class="fas fa-medal mr-2" style="color: rgb(189, 147, 10);"></span>
                                 </span>
-                                <h3 class="h5 mb-0">{{$candidate->name}}</h3>
-                                <p class="card-text">{{$candidate->slogan}}</p>
-                                <a class="btn btn-sm btn-primary mb-4" href="{{route('profil',[$candidate->id])}}">
+                                <h3 class="h5 mb-0">{{$candidature->candidate->firstname.' '.$candidature->candidate->name.' '.$candidature->candidate->lastname}}</h3>
+                                <p class="card-text">{{$candidature->candidate->slogan}}</p>
+                                <a class="btn btn-sm btn-primary mb-4" href="{{route('profil',[$candidature->candidate->id])}}">
                                     <span class="fas fa-plus mr-1"></span> Détail
                                 </a>
                                 <ul class="list-unstyled d-flex justify-content-center my-3">
                                     <li>
-                                        <a href="{{$candidate->id_facebook}}" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
+                                        <a href="{{$candidature->candidate->id_facebook}}" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
                                             <span class="fab fa-facebook-f"></span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{$candidate->id_facebook}}" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
+                                        <a href="{{$candidature->candidate->id_facebook}}" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
                                             <span class="fab fa-twitter"></span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{$candidate->id_facebook}}" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
+                                        <a href="{{$candidature->candidate->id_facebook}}" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
                                             <span class="fab fa-slack-hash"></span>
                                         </a>
                                     </li>

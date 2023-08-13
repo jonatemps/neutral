@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Orchid\Attachment\Attachable;
@@ -17,5 +18,11 @@ class Memo extends Model
      * @var array
      */
     protected $guarded = [];
+
+    public function getDate(){
+        $formatted = Carbon::parse($this->updated_at)->translatedFormat('l, F j, Y');
+return $formatted;
+
+    }
 
 }

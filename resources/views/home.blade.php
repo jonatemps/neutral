@@ -898,7 +898,13 @@
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
 
+<script>
+    var provs = @js($provs)
 
+    // console.log(figures);
+    // console.log(figures);
+    // "figures" will now be a JavaScript array of post data from PHP.
+</script>
 <script src="{{asset('js/treeChart.js')}}"></script>
 <script src="{{asset('js/tagCloud.js')}}"></script>
 

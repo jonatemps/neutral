@@ -1,3 +1,6 @@
+// var figures = @js($figures)
+
+// console.log(provs);
 am5.ready(function() {
 
     // Create root element

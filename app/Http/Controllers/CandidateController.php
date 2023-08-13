@@ -17,7 +17,7 @@ class CandidateController extends Controller
     }
 
     public function detail(Candidate $candidate){
-
+    //  dd($candidate->candidature->mandates);
         return view('candidate.candidate',['candidate' => $candidate]);
     }
 }

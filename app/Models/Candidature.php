@@ -12,7 +12,7 @@ class Candidature extends Model
 {
     use HasFactory,AsSource, Filterable, Attachable;
 
-    protected $with = ['mandats'];
+    protected $with = ['mandates'];
     protected $guarded = [];
     /**
      * The attributes that are mass assignable.
@@ -31,7 +31,7 @@ class Candidature extends Model
         return $this->belongsTo(Candidate::class,'candidate_id');
      }
 
-     public function mandats()
+     public function mandates()
      {
         return $this->belongsToMany(Mandate::class);
      }

@@ -106,10 +106,10 @@ class CandidatureEditScreen extends Screen
 
             Layout::rows([
                 Group::make([
-                    ModalToggle::make('Ajouter Diplôme')->modal('diplomaModal')->method('buttonClickProcessing')->type(Color::PRIMARY())->icon('plus'),
-                    ModalToggle::make('Ajouter Expériences')->modal('experienceModal')->method('buttonClickProcessing')->type(Color::SECONDARY())->icon('plus'),
-                    ModalToggle::make('Ajouter Photos')->modal('photoModal')->method('buttonClickProcessing')->type(Color::SUCCESS())->icon('plus'),
-                    ModalToggle::make('Ajouter Vidéos')->modal('videoModal')->method('buttonClickProcessing')->type(Color::WARNING())->icon('plus'),
+                    ModalToggle::make('Ajouter Diplôme')->modal('diplomaModal')->method('saveDiploma')->type(Color::PRIMARY())->icon('plus'),
+                    ModalToggle::make('Ajouter Expériences')->modal('experienceModal')->method('saveExperience')->type(Color::SECONDARY())->icon('plus'),
+                    ModalToggle::make('Ajouter Photos')->modal('photoModal')->method('savePhoto')->type(Color::SUCCESS())->icon('plus'),
+                    ModalToggle::make('Ajouter Vidéos')->modal('videoModal')->method('saveVideo')->type(Color::WARNING())->icon('plus'),
                 ])->autoWidth(),
             ])->title('Edition Avancée du candidat'),
 
@@ -264,7 +264,7 @@ class CandidatureEditScreen extends Screen
                     CircumscriptionListener::class,
 
                 Layout::block(Layout::rows([
-                        Select::make('candidate.candidature.mandats')
+                        Select::make('candidate.candidature.mandates')
                         ->fromModel(Mandate::class,'name','id')
                         ->empty('No  Select')
                         ->multiple(),
@@ -555,22 +555,22 @@ class CandidatureEditScreen extends Screen
             'id_year' => $request->input('candidate.candidature.year'),
         ]);
 
-        // dd($candidate->candidature->mandats->isEmpty(),$candidate->candidature->mandats);
-        // dd($request->input('candidate.candidature.mandats'));
-        if (!($request->input('candidate.candidature.mandats') == null)) {
-            $mandats = $request->input('candidate.candidature.mandats');
+        // dd($candidate->candidature->mandates->isEmpty(),$candidate->candidature->mandates);
+        // dd($request->input('candidate.candidature.mandates'));
+        if (!($request->input('candidate.candidature.mandates') == null)) {
+            $mandates = $request->input('candidate.candidature.mandates');
 
             DB::table('candidature_mandate')->where('candidature_id',$candidate->candidature->id)->delete();
-            // dd($request->input('candidate.candidature.mandats'));
+            // dd($request->input('candidate.candidature.mandates'));
 
-            foreach ($mandats as $key => $value) {
+            foreach ($mandates as $key => $value) {
                 DB::table('candidature_mandate')->insert([
                     'candidature_id' =>$candidature->id,
                     'mandate_id' => $value
                 ]);
             }
             // dd($candidate->candidature->id,DB::table('candidature_mandate')->where('candidature_id',$candidate->candidature->id)->delete(),
-            // $request->input('candidate.candidature.mandats'));
+            // $request->input('candidate.candidature.mandates'));
         }
 
 
