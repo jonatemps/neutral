@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('candidate_id');
-            $table->unsignedBigInteger('id_divice');
-            $table->unsignedBigInteger('id_comment');
+            $table->unsignedBigInteger('divice_id');
+            $table->unsignedBigInteger('comment_id')->nullable();
             $table->string('name');
             $table->string('email');
             $table->text('content');
             $table->timestamps();
 
             $table->foreign('candidate_id')->references('id')->on('candidates');
-            $table->foreign('id_divice')->references('id')->on('divices');
-            $table->foreign('id_comment')->references('id')->on('comments');
+            $table->foreign('divice_id')->references('id')->on('divices');
+            $table->foreign('comment_id')->references('id')->on('comments');
 
 
         });

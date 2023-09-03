@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8 text-center">
                 <h1 class="display-2 mb-4">Trouvez votre candidat</h1>
-                <p class="lead mb-5">Utilisz notre système de filtrage pour pouvoir localiser n'importe quel candidat qui vous interesse étant donné qu'il s'est fait enregistré volontié au Neutral système.</p>
+                <p class="lead mb-5">Utilisez notre système de filtrage pour pouvoir localiser n'importe quel candidat qui vous interesse étant donné qu'il s'est fait enregistré volontié au Neutral système.</p>
                 <a class="btn btn-primary" href="./contact.html"><span class="fas fa-book-reader mr-2"></span>Our works</a></div>
         </div>
         <div class="row">

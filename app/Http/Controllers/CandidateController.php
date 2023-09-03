@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Candidate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class CandidateController extends Controller
 {
@@ -17,7 +18,7 @@ class CandidateController extends Controller
     }
 
     public function detail(Candidate $candidate){
-    //  dd($candidate->candidature->mandates);
+
         return view('candidate.candidate',['candidate' => $candidate]);
     }
 }

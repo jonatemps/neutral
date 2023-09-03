@@ -74,4 +74,14 @@ class Candidate extends Model
     {
        return $this->belongsTo(Candidature::class,'id','candidate_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function interactions()
+    {
+        return $this->belongsTo(Interaction::class);
+    }
 }
