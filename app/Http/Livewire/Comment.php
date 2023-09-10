@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Comment as ModelsComment;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 use Livewire\Component;
@@ -24,6 +25,10 @@ class Comment extends Component
 
     public function mount(Request $request){
 
+        if (isset($_COOKIE['OurUserName']) && isset($_COOKIE['OurUserEmail'])) {
+            $this->nameReplay = $_COOKIE['OurUserName'];
+            $this->emailReplay = $_COOKIE['OurUserEmail'];
+        }
 
         $this->candidate = request('candidate');
         // dd($this->candidate_id);
@@ -35,55 +40,97 @@ class Comment extends Component
         // if (Session::get('user_name')) {
         //     # code...
         // }
-        $validatedData = $this->validate([
-            'name' => 'required|min:6',
-            'email' => 'required|email',
-            'content' => 'required',
-        ]);
-
         $comment =new  ModelsComment();
 
-        $comment->fill($validatedData);
-        $comment->candidate_id = $this->candidate->id;
+
+        if (!isset($_COOKIE['OurUserName']) && !isset($_COOKIE['OurUserEmail'])) {
+            $validatedData = $this->validate([
+                'name' => 'required|min:6',
+                'email' => 'required|email',
+                'content' => 'required',
+            ]);
+            $comment->fill($validatedData);
+
+        } else {
+            $validatedData = $this->validate([
+                'content' => 'required',
+            ]);
+            $comment->fill($validatedData);
+            $comment->name = $_COOKIE['OurUserName'];
+            $comment->email = $_COOKIE['OurUserEmail'];
+        }
+
+
+
+
+        if (!isset($_COOKIE['OurUserName']) && !isset($_COOKIE['OurUserEmail'])) {
+            $cookie_name = "OurUserName";
+            $cookie_value = $validatedData['name'];
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 90), "/"); // 86400 = 1 day
+            $cookie_name = "OurUserEmail";
+            $cookie_value = $validatedData['email'];
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 90), "/"); // 86400 = 1 day
+        }
+
+
+
+        // $comment->fill($validatedData);
+        $cadidate_id = $this->candidate->id;
+        $comment->candidate_id = $cadidate_id;
+        // dd(isset($_COOKIE['OurUserName']),$_COOKIE['OurUserName'],$_COOKIE['OurUserEmail']);
+        // dd($comment);
         $comment->save();
 
+        // $this->content = '';
 
-        $this->render();
-
-        return redirect()->back()->cookie('name','value',1);
+        return redirect(request()->header('Referer'));
     }
 
     public function saveReplay($comment_id)
     {
-        $validatedData = $this->validate([
-            'nameReplay' => 'required|min:6',
-            'emailReplay' => 'required|email',
-            'contentReplay' => 'required',
-        ]);
-
-        // dd($validatedData);
-
-
         $comment = new  ModelsComment();
 
-        $comment->name = $validatedData['nameReplay'];
-        $comment->email = $validatedData['emailReplay'];
-        $comment->content = $validatedData['contentReplay'];
+        if (!isset($_COOKIE['OurUserName']) && !isset($_COOKIE['OurUserEmail'])) {
+            $validatedData = $this->validate([
+                'nameReplay' => 'required|min:6',
+                'emailReplay' => 'required|email',
+                'contentReplay' => 'required',
+            ]);
+            $comment->fill($validatedData);
+
+        } else {
+            $validatedData = $this->validate([
+                'contentReplay' => 'required',
+            ]);
+            $comment->content = $validatedData['contentReplay'];
+            $comment->name = $_COOKIE['OurUserName'];
+            $comment->email = $_COOKIE['OurUserEmail'];
+        }
+
         $comment->candidate_id = $this->candidate->id;
         $comment->comment_id = $comment_id;
 
+        // dd($comment);
         $comment->save();
 
-        $this->render();
-
-        return redirect()->back()->cookie('name','value',1);
+        return redirect(request()->header('Referer'));
     }
+
+    public function setCookieUser($name,$request){
+        $minutes = 10;
+        $response = new Response('Set Cookie');
+        $response->withCookie(cookie('name222', 'MyValue', $minutes));
+        return $response;
+    }
+
 
     public function render()
     {
-        $comments = $this->candidate->comments->where('comment_id',null);
+        // $comments = $this->candidate->comments->where('comment_id',null)->simplePaginate(2);
+        $comments = ModelsComment::where('comment_id',null)->where('candidate_id',$this->candidate->id)->simplePaginate(2);
 
-        $cookie = cookie('name', 'value', 1);
+        // dd($comments);
+        // $cookie = cookie('name', 'value', 1);
 
 
         // return response(view('livewire.comment',[

@@ -30,11 +30,11 @@
                             <span class="badge badge-md badge-dark text-uppercase mr-2">23</span> Commentaires
                         </label>
                         <form wire:submit.prevent="submit">
-                            <div class="form-group">
+                            <div class="form-group" {{isset($_COOKIE['OurUserName']) ? 'hidden' : '' }}>
                                 <input type="text" class="form-control" id="exampleInputName" placeholder="Enter name" wire:model="name">
                                 @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" {{isset($_COOKIE['OurUserEmail']) ? 'hidden' : '' }}>
                                 <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter email" wire:model="email">
                                 @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
@@ -65,6 +65,7 @@
 
                         <div class="row">
                             <div class="col text-center">
+                                <a href="http://"></a>
                                 <button class="btn btn-pill btn-facebook button-comment" type="button">
                                     <span class="mr-1"><span class="fas fa-angle-up"></span></span>
                                     Précedents
@@ -95,18 +96,18 @@
                                             <span class="far fa-thumbs-down text-action text-danger mr-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dislike comment"></span>
                                             <span class="font-small font-weight-light">4 likes</span>
                                         </div>
-                                        <a class="text-action font-weight-light font-small" data-toggle="collapse" role="button" href="#replyContainer4" aria-expanded="false" aria-controls="replyContainer4">
+                                        <a class="text-action font-weight-light font-small" data-toggle="collapse" role="button" href="#replyContainer{{$comment->id}}" aria-expanded="false" aria-controls="replyContainer{{$comment->id}}">
                                             <span class="fas fa-reply mr-2"></span> Reply
                                         </a>
                                     </div>
-                                    <div class="collapse" id="replyContainer4">
+                                    <div class="collapse" id="replyContainer{{$comment->id}}">
                                         <label class="mb-4" for="exampleFormControlTextarea13">Replay</label>
                                         <form wire:submit.prevent="saveReplay({{$comment->id}})">
-                                            <div class="form-group">
+                                            <div class="form-group" {{isset($_COOKIE['OurUserName']) ? 'hidden' : '' }}>
                                                 <input type="text" class="form-control" id="exampleInputNameReplay" placeholder="Enter nameReplay" wire:model.defer="nameReplay">
                                                 @error('nameReplay') <span class="text-danger">{{ $message }}</span> @enderror
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group" {{isset($_COOKIE['OurUserEmail']) ? 'hidden' : '' }}>
                                                 <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter emailReplay" wire:model.defer="emailReplay">
                                                 @error('emailReplay') <span class="text-danger">{{ $message }}</span> @enderror
                                             </div>
@@ -146,11 +147,11 @@
                                     <div class="collapse" id="{{'replyContainer'.$item->id}}">
                                         <label class="mb-4" for="exampleFormControlTextarea14">Replay</label>
                                         <form wire:submit.prevent="saveReplay({{$comment->id}})">
-                                            <div class="form-group">
+                                            <div class="form-group" {{isset($_COOKIE['OurUserName']) ? 'hidden' : '' }}>
                                                 <input type="text" class="form-control" id="exampleInputNameReplay" placeholder="Enter nameReplay" wire:model.defer="nameReplay">
                                                 @error('nameReplay') <span class="text-danger">{{ $message }}</span> @enderror
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group" {{isset($_COOKIE['OurUserEmail']) ? 'hidden' : '' }}>
                                                 <input type="text" class="form-control" id="exampleInputEmail" placeholder="Enter emailReplay" wire:model.defer="emailReplay">
                                                 @error('emailReplay') <span class="text-danger">{{ $message }}</span> @enderror
                                             </div>

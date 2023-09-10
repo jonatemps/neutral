@@ -14,15 +14,12 @@ return new class extends Migration
         Schema::create('interactions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('candidate_id');
-            $table->unsignedBigInteger('id_divice');
-            $table->boolean('like')->default(0);
-            $table->boolean('dislike')->default(0);
-            $table->boolean('seen');
+            $table->integer('like')->default(0);
+            $table->integer('dislike')->default(0);
+            $table->integer('seen')->default(0);
             $table->timestamps();
 
             $table->foreign('candidate_id')->references('id')->on('candidates');
-            $table->foreign('id_divice')->references('id')->on('divices');
-
         });
     }
 

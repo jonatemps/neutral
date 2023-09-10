@@ -19,7 +19,7 @@ class Comment extends Model
     }
 
     public function getDate(){
-        $formatted = Carbon::parse($this->updated_at)->translatedFormat('l, F j, Y');
+        $formatted = Carbon::parse($this->updated_at)->diffForHumans();
 return $formatted;
 
     }

@@ -7,9 +7,11 @@
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
+        "hisorange/browser-detect": "^4.5",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "livewire/livewire": "^2.12",
         "orchid/crud": "^3.9",
         "orchid/platform": "^13.9"
     },
