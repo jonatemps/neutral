@@ -13,9 +13,14 @@ class Circumscription extends Model
     use HasFactory,AsSource, Filterable, Attachable;
 
     protected $guarded = [];
-    
+
     public function province()
     {
        return $this->belongsTo(Province::class,'id_province');
+    }
+
+    public function nameUc()
+    {
+        return ucfirst(strtolower($this->name));
     }
 }

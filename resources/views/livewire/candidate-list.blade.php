@@ -122,9 +122,9 @@
                             </div>
                             <div class="card-body pt-2">
                                 <span class="h6 icon-tertiary">
-                                    <span class="fas fa-medal mr-2" style="color: rgb(175, 16, 16);"></span>
-                                    <span class="fas fa-medal mr-2" style="color: rgb(18, 177, 240);"></span>
-                                    <span class="fas fa-medal mr-2" style="color: rgb(189, 147, 10);"></span>
+                                    @foreach ($candidature->mandates as $mandate)
+                                        {!!$mandate->getStyleMandate()!!}
+                                    @endforeach
                                 </span>
                                 <h3 class="h5 mb-0">{{$candidature->candidate->firstname.' '.$candidature->candidate->name.' '.$candidature->candidate->lastname}}</h3>
                                 <p class="card-text">{{$candidature->candidate->slogan}}</p>

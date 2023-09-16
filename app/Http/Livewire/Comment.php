@@ -5,12 +5,12 @@ namespace App\Http\Livewire;
 use App\Models\Comment as ModelsComment;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Route;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Comment extends Component
 {
+    use WithPagination;
 
 
     public $name;
@@ -20,6 +20,9 @@ class Comment extends Component
     public $nameReplay;
     public $emailReplay;
     public $contentReplay;
+
+
+    protected $paginationTheme = 'bootstrap';
 
 
 
@@ -127,7 +130,7 @@ class Comment extends Component
     public function render()
     {
         // $comments = $this->candidate->comments->where('comment_id',null)->simplePaginate(2);
-        $comments = ModelsComment::where('comment_id',null)->where('candidate_id',$this->candidate->id)->simplePaginate(2);
+        $comments = ModelsComment::where('comment_id',null)->where('candidate_id',$this->candidate->id)->paginate(2);
 
         // dd($comments);
         // $cookie = cookie('name', 'value', 1);
@@ -140,5 +143,14 @@ class Comment extends Component
         return view('livewire.comment',[
             'comments' => $comments
         ]);
+    }
+
+
+    public function nextPage(){
+        $this->nextPageUrl();
+    }
+
+    public function previousPage(){
+        $this->previousPage();
     }
 }

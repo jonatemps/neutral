@@ -63,6 +63,11 @@
                             </div>
                         </div>
 
+                        <div>
+                            {{-- {{ $comments->links() }} --}}
+
+                        </div>
+
                         <div class="row">
                             <div class="col text-center">
                                 <a href="http://"></a>
@@ -171,6 +176,7 @@
                             @endforeach
 
                         </div>
+                        {{ $comments->links() }}
                         {{-- <div class="mt-5 text-center">
                             <button id="loadOnClick" class="btn btn-primary btn-loading-overlay mr-2 mb-2 btn-loading" disabled="disabled" style="display: none;">
                                 <span class="spinner">

@@ -96,7 +96,7 @@
 <header class="header-global">
     <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent navbar-theme-primary">
         <div class="container position-relative">
-            <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4" href="./index.html">
+            <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4" href="{{route('home')}}">
                 <img class="navbar-brand-dark" src="{{asset('./assets/img/brand/dark.svg')}}" alt="Logo light">
                 <img class="navbar-brand-light" src="{{asset('./assets/img/brand/dark.svg')}}" alt="Logo dark">
             </a>
@@ -104,7 +104,7 @@
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
-                            <a href="./index.html" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
+                            <a href="{{route('home')}}" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
                                 <img src="{{asset('./assets/img/brand/dark.svg')}}" alt="Themesberg logo">
                             </a>
                         </div>

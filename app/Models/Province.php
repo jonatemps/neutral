@@ -14,9 +14,14 @@ class Province extends Model
      *
      * @var array
      */
-    protected $with = ['circonscriptions'];
+    // protected $with = ['circonscriptions'];
     public function circonscriptions()
     {
         return $this->hasMany(Circumscription::class,'id_province','id');
+    }
+
+    public function nameUc()
+    {
+        return ucfirst(strtolower($this->name));
     }
 }

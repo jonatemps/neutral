@@ -82,6 +82,7 @@ class Candidate extends Model
 
     public function interactions()
     {
-        return $this->belongsTo(Interaction::class);
+        return $this->belongsTo(Interaction::class,'id','candidate_id');
     }
+
 }
