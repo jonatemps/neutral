@@ -57,13 +57,13 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{$candidature->id_facebook}}" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
+                                        <a href="{{$candidature->id_twitter}}" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
                                             <span class="fab fa-twitter"></span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{$candidature->id_facebook}}" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                                            <span class="fab fa-slack-hash"></span>
+                                        <a href="{{$candidature->id_linkedin}}" target="_blank" aria-label="slack social link" class="icon icon-xs mr-3">
+                                            <span class="fab fa-linkedin"></span>
                                         </a>
                                     </li>
                                 </ul>

@@ -27,7 +27,7 @@
             <div class="col-12 col-lg-8">
                 <div>
                         <label class="h5 mb-4" for="exampleFormControlTextarea1">
-                            <span class="badge badge-md badge-dark text-uppercase mr-2">23</span> Commentaires
+                            <span class="badge badge-md badge-dark text-uppercase mr-2">{{$comments->count()}}</span> Commentaires
                         </label>
                         <form wire:submit.prevent="submit">
                             <div class="form-group" {{isset($_COOKIE['OurUserName']) ? 'hidden' : '' }}>
@@ -49,32 +49,30 @@
                         </div>
                         </form>
 
-                        <div class="dropdown">
-                            <div class="btn-group mr-2 mb-2">
-                                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Plus pertinents <span class="fas fa-angle-down dropdown-arrow"></span>
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="">Tous les commentaires</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="">Plus pertinents</a>
-                                </div>
+                        <div class="col-5 pl-0">
+                            <div class="form-group">
+                                <select class="custom-select" id="" wire:model="commentFilter">
+                                    <option selected value>Tous les commentaires</option>
+                                    <option value="1">Plus pertinents</option>
+                                    <option value="2">Moins pertinents</option>
+                                </select>
                             </div>
                         </div>
 
-                        <div>
-                            {{-- {{ $comments->links() }} --}}
-
-                        </div>
 
                         <div class="row">
                             <div class="col text-center">
-                                <a href="http://"></a>
-                                <button class="btn btn-pill btn-facebook button-comment" type="button">
-                                    <span class="mr-1"><span class="fas fa-angle-up"></span></span>
-                                    Précedents
-                                </button>
+
+                                @if ($comments->hasPages())
+                                    @if ($comments->onFirstPage())
+                                        <span>Previous</span>
+                                    @else
+                                        <button wire:click="previousPage" wire:loading.attr="disabled" rel="prev" class="btn btn-pill btn-facebook button-comment" type="button">
+                                            <span class="mr-1"><span class="fas fa-angle-up"></span></span>
+                                            Précedents
+                                        </button>
+                                    @endif
+                                @endif
                             </div>
                         </div>
 
@@ -82,7 +80,7 @@
                             @foreach ($comments as $comment)
                             <div>
                                 <div class="card bg-primary shadow-soft border-light p-4 mb-4">
-                                    <div class="d-flex justify-content-between mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
                                         <span class="font-small">
                                             <a href="#">
                                                 <img class="avatar-sm img-fluid rounded-circle mr-2" src="../../assets/img/team/profile-picture-2.jpg" alt="Neil avatar">
@@ -127,9 +125,9 @@
                                         </form>
                                     </div>
                                 </div>
-                                @foreach ($comment->comments as $item)
+                                @foreach ($comment->replys as $item)
                                 <div class="card bg-primary shadow-soft rounded border-light p-4 ml-5 mb-4">
-                                    <div class="d-flex justify-content-between mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
                                         <span class="font-small">
                                             <a href="#">
                                                 <img class="avatar-sm img-fluid rounded-circle mr-2" src="../../assets/img/team/profile-picture-5.jpg" alt="Jose avatar">
@@ -176,7 +174,7 @@
                             @endforeach
 
                         </div>
-                        {{ $comments->links() }}
+                        {{-- {{ $comments->links() }} --}}
                         {{-- <div class="mt-5 text-center">
                             <button id="loadOnClick" class="btn btn-primary btn-loading-overlay mr-2 mb-2 btn-loading" disabled="disabled" style="display: none;">
                                 <span class="spinner">
@@ -188,11 +186,41 @@
                         </div> --}}
                         <div class="row">
                             <div class="col text-center">
-                                <button class="btn btn-pill btn-facebook button-comment" type="button">
-                                    <span class="mr-1"><span class="fas fa-angle-down"></span></span>
-                                    Suivents
-                                </button>
+                                @if ($comments->hasPages())
+                                    @if ($comments->onLastPage())
+                                        <span>Previous</span>
+                                    @else
+                                        <button wire:click="nextPage" wire:loading.attr="disabled" rel="next" class="btn btn-pill btn-facebook button-comment" type="button">
+                                            <span class="mr-1"><span class="fas fa-angle-down"></span></span>
+                                            Suivents
+                                        </button>
+                                        {{-- <button wire:click="previousPage" wire:loading.attr="disabled" rel="prev">Previous</button> --}}
+                                    @endif
+                                @endif
+
                             </div>
+                            {{-- <div>
+                                @if ($comments->hasPages())
+                                    <nav role="navigation" aria-label="Pagination Navigation">
+                                        <span>
+                                            @if ($comments->onFirstPage())
+                                                <span>Previous</span>
+                                            @else
+                                                <button wire:click="previousPage" wire:loading.attr="disabled" rel="prev">Previous</button>
+                                            @endif
+                                        </span>
+
+                                        <span>
+                                            @if ($comments->onLastPage())
+                                                <span>Next</span>
+                                            @else
+                                                <button wire:click="nextPage" wire:loading.attr="disabled" rel="next">Next</button>
+                                            @endif
+                                        </span>
+                                    </nav>
+                                @endif
+                            </div> --}}
+
                         </div>
                     </div>
                 </div>

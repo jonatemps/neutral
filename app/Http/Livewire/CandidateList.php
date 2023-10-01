@@ -9,16 +9,17 @@ use App\Models\Mandate;
 use App\Models\Party;
 use App\Models\Province;
 use Livewire\Component;
-
-
+use Livewire\WithPagination;
 
 class CandidateList extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public $searchBar,$searchAdvenced,$DepProv,$DepNatoin,$Presidence,$party,$province,$circumpcription;
-    public $perPage = 6;
+    public $perPage = 9;
 
     public function render()
-
     {
 
         // Table::where('id', 1)->select('name', 'surname')->get();
@@ -58,7 +59,7 @@ class CandidateList extends Component
             $candidatures =  $candidatures->where('id_circumscription',$this->circumpcription);
         }
         $candidatures =  $candidatures->latest()->paginate($this->perPage);
-        
+
         return view('livewire.candidate-list',[
             'parties' =>$parties,
             'candidatures' =>$candidatures,

@@ -36,9 +36,18 @@ class Candidate extends Model
 
     public function fullName()
     {
-        return $this->name.' '.$this->lastname.' '.$this->firstname;
+        return strtoupper($this->name).' '.ucfirst(strtolower($this->firstname));
     }
 
+    public function getSlogan()
+    {
+        return strlen($this->slogan) > 86 ? substr($this->slogan,0,86).'...' : $this->slogan;
+    }
+
+    public function firstnameAndName()
+    {
+        return ucfirst(strtolower($this->firstname)).' '.strtoupper($this->name);
+    }
 
     public function party()
     {

@@ -25,7 +25,7 @@
         <button wire:click="dislike" class="icon btn btn-icon-only btn-primary icon-interaction mb-2" type="button" aria-label="up button" title="up button">
             <span aria-hidden="true" class="far fa-thumbs-down"></span>
         </button>
-        <span class="counter h1 text-interaction d-block">{{$countDislike}}</span>
+        <span class="counter h1 text-interaction d-block">{{$countDislike >= 0 ?  $countDislike : 0}}</span>
         {{-- <span class="h5">Disliked</span> --}}
     </div>
     <!--End of Counter-->

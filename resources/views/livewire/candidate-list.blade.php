@@ -105,7 +105,7 @@
             {{-- <div class="row justify-content-center mb-1">
                 <h2 class="h1">Les candidats :</h2>
             </div> --}}
-            <div class="row align-items-center">
+            <div class="row justify-content-center">
                 @foreach ($candidatures as $candidature)
 {{--
                     @php
@@ -126,8 +126,8 @@
                                         {!!$mandate->getStyleMandate()!!}
                                     @endforeach
                                 </span>
-                                <h3 class="h5 mb-0">{{$candidature->candidate->firstname.' '.$candidature->candidate->name.' '.$candidature->candidate->lastname}}</h3>
-                                <p class="card-text">{{$candidature->candidate->slogan}}</p>
+                                <h3 class="h5 mb-0">{{$candidature->candidate->fullname()}}</h3>
+                                <p class="card-text slogan">{{$candidature->candidate->getSlogan()}}</p>
                                 <a class="btn btn-sm btn-primary mb-4" href="{{route('profil',[$candidature->candidate->id])}}">
                                     <span class="fas fa-plus mr-1"></span> Détail
                                 </a>
@@ -138,13 +138,13 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{$candidature->candidate->id_facebook}}" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
+                                        <a href="{{$candidature->candidate->id_twitter}}" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
                                             <span class="fab fa-twitter"></span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{$candidature->candidate->id_facebook}}" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                                            <span class="fab fa-slack-hash"></span>
+                                        <a href="{{$candidature->candidate->id_linkedIn}}" target="_blank" aria-label="slack social link" class="icon icon-xs  mr-3">
+                                            <span class="fab fa-linkedin"></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -153,11 +153,13 @@
                     </div>
                 @endforeach
             </div>
+            {{-- {{ $candidatures->links() }} --}}
 
             <div class="row mt-5 justify-content-center">
                 <div class="col-md-4">
                     <nav aria-label="Products page navigation">
-                        <ul class="pagination">
+                        {{ $candidatures->links() }}
+                        {{-- <ul class="pagination">
                             <li class="page-item">
                                 <a class="page-link" href="#">Previous</a>
                             </li>
@@ -179,7 +181,7 @@
                             <li class="page-item">
                                 <a class="page-link" href="#">Next</a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </nav>
                 </div>
             </div>

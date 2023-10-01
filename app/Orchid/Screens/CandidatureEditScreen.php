@@ -125,7 +125,7 @@ class CandidatureEditScreen extends Screen
                                 ->title('Postnom:')
                                 ->placeholder('Entrez le postnom'),
                             Input::make('candidate.firstname')
-                                ->title('candidate.Prénom:')
+                                ->title('Prénom:')
                                 ->placeholder('Entrez le prénom'),
                             Select::make('candidate.gender')
                                 ->title('Genre:')
@@ -255,6 +255,7 @@ class CandidatureEditScreen extends Screen
 
                         Layout::rows([
                             TinyMCE::make('candidate.memo.content')
+                            ->required()
                         ]),
                     ]
 
@@ -534,7 +535,10 @@ class CandidatureEditScreen extends Screen
     }
 
     public function saveMemo(Request $request,Candidate $candidate){
-        // dd($request->input());
+        $request->validate([
+            'tinymce-wrapper-' => ['required'],
+        ]);
+
         $memo = $candidate->memo ?? new Memo();
         $memo->fill($request->input('candidate')['memo']);
         $memo->content = $request->input('tinymce-wrapper-');

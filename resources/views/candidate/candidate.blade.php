@@ -5,7 +5,23 @@
     article p, article blockquote {
     font-size: 1rem;
     margin-bottom: 4px;
-}
+    }
+
+    figcaption {
+    text-align: center;
+    }
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
 </style>
 @endsection
 @section('content')
@@ -25,12 +41,25 @@
         </div> --}}
         <!-- End of Title -->
 
-        <div class="section-header section-image bg-primary pb-0">
+        <div class="section-header section-image bg-primary pb-0 pt-6">
+            <div class="row">
+                <div class="col-12">
+                    <!--Breadcrumb-->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb breadcrumb-gray breadcrumb-transparent my-2">
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">Acceuil</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('candidates')}}">Candidats</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">detail</li>
+                        </ol>
+                    </nav>
+                    <!--End of Breadcrumb-->
+                </div>
+            </div>
             <div id="top" class="container z-2">
                 <div class="row my-5 justify-content-center text-center">
                     <div class="col-lg-8">
                         <img style="height: 300px;" src="{{$candidate->photo}}" class="rounded-circle img-thumbnail image-lg border-light shadow-inset p-3" alt="Joseph Avatar">
-                        <h1 class="h2 my-4">{{$candidate->name}}</h1>
+                        <h1 class="h2 my-4">{{$candidate->fullname()}}</h1>
                         <h2 class="h5 font-weight-normal text-gray mb-4"><span class="fas fa-map-marker-alt mr-2"></span>{{$candidate->slogan}}</h2>
                         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-3 mb-0">
                             <li>
@@ -49,7 +78,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <livewire:counter /> 
+                        <livewire:counter />
                     </div>
                 </div>
                 <div class="row justify-content-center text-center" {{$candidate->candidature->mandates->where('id','!=', 3)->count() >= 1 ? '' : 'hidden'}}>
@@ -127,7 +156,7 @@
                         <div class="card bg-primary shadow-soft border-light ">
                             <div class="card-header rounded pb-0">
                                 {{-- <img src="../../assets/img/blog/blog-article-1.jpg" class="card-img-top rounded" alt="Webdeveloper desk"> --}}
-                                <iframe class="card-img-top rounded"  allowfullscreen style="width: -webkit-fill-available;height: 250px;" class="taille-video" {{-- width="420" height="315" --}} src="{{$candidate->memo->lnk_video}}"> </iframe>
+                                <iframe class="card-img-top rounded"  allowfullscreen style="width: -webkit-fill-available;height: 250px;" class="taille-video" {{-- width="420" height="315" --}} src="{{$candidate->memo->lnk_video ?? ''}}"> </iframe>
                                 <a href="#!" data-toggle="modal" data-target="#modal-videoMemo">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
                                 </a>
@@ -145,7 +174,7 @@
                                         <div class="modal-body">
                                             <iframe
                                                 class="video-modal"
-                                                src="{{$candidate->memo->lnk_video}}"
+                                                src="{{$candidate->memo->lnk_video ?? '' ?? ''}}"
                                                 title="YouTube video"
                                                 allowfullscreen
                                             ></iframe>
@@ -466,19 +495,21 @@
             <a href="#" class="badge badge-success text-uppercase px-3">Marketing</a>
         </div> --}}
         @php
+            // libxml_use_internal_errors(true);
             $html = '<h1>Titre 1</h1><h2>Titre 2</h2><h3>Titre 3</h3><h3>Un autre titre 3</h3>';
             $dom = new DOMDocument;
-            // dd($candidate->memo->content,$dom);
-            $dom->loadHTML($candidate->memo->content);
+            // dd($candidate->memo->content,$html);
+            $dom->loadHTML(htmlspecialchars($candidate->memo->content));
             // $dom->loadHTML($html);
             $h3tags = $dom->getElementsByTagName("p");
             $count = $h3tags->length;
+            $count = $count/2;
         @endphp
         <h1 class="display-3 mb-4 px-lg-5">Projet de société</h1>
         <div class="post-meta">
             {{-- <span class="font-weight-bold mr-3">James Curran</span> --}}
             <span class="post-date mr-3">{{$candidate->memo->getDate()}}</span>
-            <span class="font-weight-bold">{{number_format($count/2,0)}} min de lecture</span>
+            <span class="font-weight-bold">{{number_format($count,0)}} min de lecture</span>
         </div>
     </div>
 </div>
@@ -518,186 +549,63 @@
 {{-- comments section --}}
 <livewire:comment />
 {{-- end comments section --}}
-<div class="row pb-4">
-    <!--Counter-->
-    <div class="col-3 col-sm-6 col-lg-3 mb-lg-0 text-center">
-        {{-- <div class="icon icon-shape shadow-inset border-light rounded-circle mb-4">
-            <span class="far fa-laugh-beam"></span>
-            <span aria-hidden="true" class="far fa-thumbs-up"></span>
-        </div> --}}
-        <button class="icon btn btn-icon-only btn-primary icon-interaction mb-2" type="button" aria-label="up button" title="up button">
-            <span aria-hidden="true" class="far fa-eye"></span>
-        </button>
-        <span class="counter h1 text-interaction d-block">500</span>
-    </div>
-    <!--End of Counter-->
-    <!--Counter-->
-    <div class="col-3 col-sm-6 col-lg-3 mb-lg-0 text-center">
-        <button class="icon btn btn-icon-only btn-primary icon-interaction mb-2" type="button" aria-label="up button" title="up button">
-            <span aria-hidden="true" class="far fa-thumbs-up"></span>
-        </button>
-        <span class="counter h1 text-interaction d-block">1560</span>
-        {{-- <span class="h5">Liked</span> --}}
-    </div>
-    <!--End of Counter-->
-    <!--Counter-->
-    <div class="col-3 col-sm-6 col-lg-3 mb-lg-0 text-center">
-        <button class="icon btn btn-icon-only btn-primary icon-interaction mb-2" type="button" aria-label="up button" title="up button">
-            <span aria-hidden="true" class="far fa-thumbs-down"></span>
-        </button>
-        <span class="counter h1 text-interaction d-block">1560</span>
-        {{-- <span class="h5">Disliked</span> --}}
-    </div>
-    <!--End of Counter-->
-    <!--Counter-->
-    <div class="col-3 col-sm-6 col-lg-3 mb-lg-0 text-center">
-        <button class="icon btn btn-icon-only btn-primary icon-interaction mb-2" type="button" aria-label="up button" title="up button">
-            <span aria-hidden="true" class="far fa-comments"></span>
-        </button>
-        <span class="counter h1 text-interaction d-block">160</span>
-        {{-- <span class="h5">Comments</span> --}}
-    </div>
-    <!--End of Counter-->
+
+<div class="pb-6">
+    <livewire:counter />
 </div>
 
 
 <section class="section section-lg pt-0">
     <div class="container">
         <!-- Title -->
-        <div class="row">
+        <div class="row" {{$RecomCandidates->count() >= 1 ? '' : 'hidden' }}>
             <div class="col text-center">
                 <h2 class="h5 mb-6">Ceux qui ont visités le profil de <strong>John</strong>, visitent généralement :</h2>
             </div>
         </div>
         <!-- End of title-->
         <div class="row justify-content-between">
-
-            <div class="col-12 col-md-6 col-lg-4 ">
-                <!-- Profile Card -->
-                <div class="profile-card pb-6">
-                    <div class="card bg-primary shadow-soft border-light">
-                        <div class="profile-image bg-primary shadow-inset border border-light rounded p-3 ml-3 mt-n5">
-                            <img src="./assets/img/team/profile-picture-3.jpg" class="card-img-top rounded" alt="Bonnie Avatar">
-                        </div>
-
-                        <div class="card-body">
-                            <div>
-                                <span class="h6 icon-tertiary small"><span style="font-size: x-large;color: rgb(175, 16, 16);" class="fas fa-medal mr-2"></span>Awards</span>
+            @foreach ($RecomCandidates as $RecomCandidate)
+                <div class="col-12 col-md-6 col-lg-4 ">
+                    <!-- Profile Card -->
+                    <div class="profile-card pb-6">
+                        <div class="card bg-primary shadow-soft border-light">
+                            <div class="profile-image bg-primary shadow-inset border border-light rounded p-3 ml-3 mt-n5">
+                                <img src="{{$RecomCandidate->photo}}" class="card-img-top rounded" alt="Bonnie Avatar">
                             </div>
-                            <h3 class="h5 mb-2">Bonnie Green</h3>
-                            <span class="h6 font-weight-normal text-gray mb-3">Web Designer</span>
-                            <ul class="list-unstyled d-flex my-3">
-                                <li>
-                                    <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
-                                        <span class="fab fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
-                                        <span class="fab fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                                        <span class="fab fa-slack-hash"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3">
-                                        <span class="fab fa-dribbble"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                            <div class="card-body">
+                                <div>
+                                    @foreach ($RecomCandidate->candidature->mandates as $item)
+                                        {!! $item->getStyleMandate() !!}
+                                    @endforeach
+                                    {{-- <span class="h6 icon-tertiary small"><span style="font-size: x-large;color: rgb(175, 16, 16);" class="fas fa-medal mr-2"></span>Awards</span> --}}
+                                </div>
+                                <h3 class="h5 mb-2">{{$RecomCandidate->fullname()}}</h3>
+                                <ul class="list-unstyled d-flex my-3">
+                                    <li>
+                                        <a href="{{$RecomCandidate->id_facebook}}" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
+                                            <span class="fab fa-facebook-f"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{$RecomCandidate->id_twitter}}" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
+                                            <span class="fab fa-twitter"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{$RecomCandidate->id_linkedIn}}" target="_blank" aria-label="slack social link" class="icon icon-xs  mr-3">
+                                            <span class="fab fa-linkedin"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <p class="card-text">{{$RecomCandidate->getSlogan()}}</p>
+                            </div>
                         </div>
                     </div>
+                    <!-- End of Profile Card -->
                 </div>
-                <!-- End of Profile Card -->
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 ">
-                <!-- Profile Card -->
-                <div class="profile-card pb-6">
-                    <div class="card bg-primary shadow-soft border-light">
-                        <div class="profile-image bg-primary shadow-inset border border-light rounded p-3 ml-3 mt-n5">
-                            <img src="./assets/img/team/profile-picture-3.jpg" class="card-img-top rounded" alt="Bonnie Avatar">
-                        </div>
-
-                        <div class="card-body">
-                            <div>
-                                <span class="h6 icon-tertiary small"><span style="font-size: x-large;color: rgb(189, 147, 10)" class="fas fa-medal mr-2"></span>Awards</span>
-                            </div>
-                            <h3 class="h5 mb-2">Bonnie Green</h3>
-                            <span class="h6 font-weight-normal text-gray mb-3">Web Designer</span>
-                            <ul class="list-unstyled d-flex my-3">
-                                <li>
-                                    <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
-                                        <span class="fab fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
-                                        <span class="fab fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                                        <span class="fab fa-slack-hash"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3">
-                                        <span class="fab fa-dribbble"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Profile Card -->
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 ">
-                <!-- Profile Card -->
-                <div class="profile-card pb-6">
-                    <div class="card bg-primary shadow-soft border-light">
-                        <div class="profile-image bg-primary shadow-inset border border-light rounded p-3 ml-3 mt-n5">
-                            <img src="./assets/img/team/profile-picture-3.jpg" class="card-img-top rounded" alt="Bonnie Avatar">
-                        </div>
-
-                        <div class="card-body">
-                            <div>
-                                <span class="h6 icon-tertiary small"><span style="font-size: x-large;color: rgb(5, 141, 109);" class="fas fa-medal mr-2"></span>Awards</span>
-                            </div>
-                            <h3 class="h5 mb-2">Bonnie Green</h3>
-                            <span class="h6 font-weight-normal text-gray mb-3">Web Designer</span>
-                            <ul class="list-unstyled d-flex my-3">
-                                <li>
-                                    <a href="#" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
-                                        <span class="fab fa-facebook-f"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="twitter social link" class="icon icon-xs icon-twitter mr-3">
-                                        <span class="fab fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="slack social link" class="icon icon-xs icon-slack mr-3">
-                                        <span class="fab fa-slack-hash"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank" aria-label="dribbble social link" class="icon icon-xs icon-dribbble mr-3">
-                                        <span class="fab fa-dribbble"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Profile Card -->
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="row">

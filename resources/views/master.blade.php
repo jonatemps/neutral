@@ -147,8 +147,8 @@
                 </ul>
             </div>
             <div class="d-flex align-items-center">
-                {{-- <a href="https://themesberg.com/product/ui-kits/neumorphism-ui-pro" target="_blank" class="btn btn-primary text-secondary d-none d-md-inline-block mr-3"><i class="far fa-paper-plane mr-2"></i> Upgrade to PRO</a>
-                <a href="" target="_blank" class="btn btn-primary" style="padding: 1.9px;">
+                {{-- <a href="https://themesberg.com/product/ui-kits/neumorphism-ui-pro"  class="btn btn-primary text-secondary d-none d-md-inline-block mr-3"><i class="far fa-paper-plane mr-2"></i> Upgrade to PRO</a>
+                <a href=""  class="btn btn-primary" style="padding: 1.9px;">
                     <img src="{{asset('assets/img/team/big-profile-picture-1.jpg')}}" alt="" srcset="" style="width: 50px;height: 50px;border-radius: 90px;">
                 </a> --}}
                 <div class="nav-item dropdown">
@@ -156,7 +156,7 @@
                         <span class="nav-link-inner-text">Pages</span>
                         <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
                     </a> --}}
-                    <a href="" target="_blank" class="btn btn-primary" style="padding: 1.9px;" data-toggle="dropdown">
+                    <a href=""  class="btn btn-primary" style="padding: 1.9px;" data-toggle="dropdown">
                         <img src="{{asset('assets/img/team/big-profile-picture-1.jpg')}}" alt="" srcset="" style="width: 50px;height: 50px;border-radius: 90px;">
                     </a>
                     <ul class="dropdown-menu">
@@ -185,11 +185,11 @@
 
 </main>
 
-    {{-- <a id="producthunt-badge" href="https://www.producthunt.com/posts/neumorphism-ui?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-neumorphism-ui" target="_blank">
+    {{-- <a id="producthunt-badge" href="https://www.producthunt.com/posts/neumorphism-ui?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-neumorphism-ui" >
         <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=200908&theme=dark" alt="Neumorphism UI - Neumorphism inspired UI web components, sections and pages | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" />
     </a> --}}
 
-    <a id="producthunt-badge" href="#top" target="_blank">
+    <a id="producthunt-badge" href="#top" >
         <button class="btn btn-primary btn-pill  btn-icon-only text-twitter mr-2" type="button" aria-label="twitter button" title="twitter button">
             <span aria-hidden="true" class="fas fa-angle-up"></span>
         </button>
@@ -200,28 +200,29 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <p><strong>Neumorphism UI PRO</strong> is a premium Bootstrap UI Kit built based on the newest design trend called Neumorphism.</p>
+                <p><strong>Neutral</strong> offre un cadre d’exposition des candidatures, donnant ainsi la possibilité aux populations d’avoir une idée sur les candidats à qui ils ont affaire.
+                    </p>
                 <ul class="d-flex list-unstyled mb-5 mb-lg-0">
                     <li class="mr-2">
-                        <a href="https://twitter.com/themesberg" target="_blank" class="btn btn-icon-only btn-pill btn-primary" aria-label="twitter social link"
+                        <a href="https://twitter.com/themesberg"  class="btn btn-icon-only btn-pill btn-primary" aria-label="twitter social link"
                         data-toggle="tooltip" data-placement="top" title="Follow @themesberg on Twitter">
                             <span aria-hidden="true" class="fab fa-twitter"></span>
                         </a>
                     </li>
                     <li class="mr-2">
-                        <a href="https://www.facebook.com/themesberg/" target="_blank" class="btn btn-icon-only btn-pill btn-primary" aria-label="facebook social link"
+                        <a href="https://www.facebook.com/themesberg/"  class="btn btn-icon-only btn-pill btn-primary" aria-label="facebook social link"
                         data-toggle="tooltip" data-placement="top" title="Like @themesberg on Facebook">
                             <span aria-hidden="true" class="fab fa-facebook"></span>
                         </a>
                     </li>
                     <li class="mr-2">
-                        <a href="https://github.com/themesberg" target="_blank" class="btn btn-icon-only btn-pill btn-primary" aria-label="github social link"
+                        <a href="https://github.com/themesberg"  class="btn btn-icon-only btn-pill btn-primary" aria-label="github social link"
                         data-toggle="tooltip" data-placement="top" title="Open source projects">
                             <span aria-hidden="true" class="fab fa-github"></span>
                         </a>
                     </li>
                     <li>
-                        <a href="https://dribbble.com/themesberg" target="_blank" class="btn btn-icon-only btn-pill btn-primary" aria-label="dribbble social link"
+                        <a href="https://dribbble.com/themesberg"  class="btn btn-icon-only btn-pill btn-primary" aria-label="dribbble social link"
                         data-toggle="tooltip" data-placement="top" title="Follow us on Dribbble">
                             <span aria-hidden="true" class="fab fa-dribbble"></span>
                         </a>
@@ -229,28 +230,26 @@
                 </ul>
             </div>
             <div class="col-6 col-lg-2 mb-5 mb-lg-0">
-                <h5>Themesberg</h5>
+                <h5>Menu</h5>
                 <ul class="footer-links list-unstyled mt-2">
-                    <li class="mb-1"><a class="p-2" target="_blank" href="https://themesberg.com/blog">Blog</a></li>
-                    <li class="mb-1"><a class="p-2" target="_blank" href="https://themesberg.com/products">Products</a></li>
-                    <li class="mb-1"><a class="p-2" target="_blank" href="https://themesberg.com/about">About Us</a></li>
-                    <li><a class="p-2" target="_blank" href="https://themesberg.com/contact">Contact Us</a></li>
+                    <li class="mb-1"><a class="p-2"  href="{{route('home')}}">Accueil</a></li>
+                    <li class="mb-1"><a class="p-2"  href="{{route('candidates')}}">Candidats</a></li>
+                    <li class="mb-1"><a class="p-2"  href="{{route('about')}}">A propos</a></li>
+                    <li><a class="p-2"  href="{{route('stat.our')}}">Statisiques</a></li>
+                    <li><a class="p-2"  href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2 mb-5 mb-lg-0">
-                <h5>Other</h5>
+                <h5>Populaire</h5>
                 <ul class="footer-links list-unstyled mt-2">
-                    <li class="mb-1"><a class="p-2" href="https://themesberg.com/docs/pixel-bootstrap/getting-started/overview/" target="_blank">Docs
-                        <span class="badge badge-gray text-uppercase ml-2">v1.0</span></a>
+                    <li class="mb-1">
+                        <a class="p-2" href="{{route('candidates')}}" >Candidats</a>
                     </li>
                     <li class="mb-1">
-                        <a class="p-2" href="https://themesberg.com/docs/pixel-bootstrap/getting-started/changelog" target="_blank">Changelog</a>
+                        <a class="p-2" href="{{route('stat.our')}}" >Statistique</a>
                     </li>
                     <li class="mb-1">
-                        <a class="p-2" target="_blank" href="https://themesberg.com/licensing">License</a>
-                    </li>
-                    <li>
-                        <a class="p-2" target="_blank" href="https://github.com/themesberg/pixel-bootstrap-ui-kit/issues">Support</a>
+                        <a class="p-2"  href="{{route('contact')}}">License</a>
                     </li>
                 </ul>
             </div>
@@ -277,12 +276,12 @@
         <hr class="my-5">
         <div class="row">
             <div class="col">
-                <a href="https://themesberg.com" target="_blank" class="d-flex justify-content-center">
+                <a href="https://themesberg.com"  class="d-flex justify-content-center">
                     <img src="./assets/img/themesberg.svg" height="25" class="mb-3" alt="Themesberg Logo">
                 </a>
             <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
-                <p class="font-weight-normal font-small mb-0">Copyright © Themesberg
-                    <span class="current-year">2020</span>. All rights reserved.</p>
+                <p class="font-weight-normal font-small mb-0">Copyright © Neutral
+                    <span class="current-year">{{now()}}</span>. All rights reserved.</p>
                 </div>
             </div>
         </div>

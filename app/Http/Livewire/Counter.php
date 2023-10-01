@@ -24,8 +24,8 @@ class Counter extends Component
 
     public function mount(Request $request)
     {
-        // dd($_COOKIE['isDisliked']);
-        // setcookie('isLike', 'no', time() + 7776000);
+        // dd($_COOKIE['isDisliked'.$this->candidate_id]);
+        // setcookie('isLike'.$this->candidate_id, 'no', time() + 7776000);
         $this->candidate_id = request('candidate')->id;
         $this->interaction = Interaction::where('candidate_id',$this->candidate_id)->first();
 
@@ -62,21 +62,21 @@ class Counter extends Component
 
     public function like()
     {
-        // dd(isset($_COOKIE['isLike']),$_COOKIE['isLike'] == 'yes');
+        // dd($_COOKIE['isLike'.$this->candidate_id],isset($_COOKIE['isLike'.$this->candidate_id]),$_COOKIE['isLike'.$this->candidate_id] == 'yes');
 
 
             $interaction = Interaction::where('candidate_id',$this->candidate_id)->first();
 
-            if (!isset($_COOKIE['isLike'])) {
-                setcookie('isLike', 'yes', time() + 7776000);
+            if (!isset($_COOKIE['isLike'.$this->candidate_id])) {
+                setcookie('isLike'.$this->candidate_id, 'yes', time() + 7776000);
                 $interaction->like++;
             }
-            // setcookie('isLike', 'no', time() + 7773000);
-            // dd($_COOKIE['isLike'] != 'yes');
-            (isset($_COOKIE['isLike']) && $_COOKIE['isLike'] != 'yes') ? $interaction->like++ : '';
-            setcookie('isLike', 'yes', time() + 7776000);
-            (isset($_COOKIE['isDisliked']) && $_COOKIE['isDisliked'] == 'yes') ? $interaction->dislike-- : '';
-            setcookie('isDisliked', 'no', time() + 7775000);
+            // setcookie('isLike'.$this->candidate_id, 'no', time() + 7773000);
+            // dd($_COOKIE['isLike'.$this->candidate_id] != 'yes');
+            (isset($_COOKIE['isLike'.$this->candidate_id]) && $_COOKIE['isLike'.$this->candidate_id] != 'yes') ? $interaction->like++ : '';
+            setcookie('isLike'.$this->candidate_id, 'yes', time() + 7776000);
+            (isset($_COOKIE['isDisliked'.$this->candidate_id]) && $_COOKIE['isDisliked'.$this->candidate_id] == 'yes') ? $interaction->dislike-- : '';
+            setcookie('isDisliked'.$this->candidate_id, 'no', time() + 7776000);
             $interaction->save();
             $this->countLike = $interaction->like;
             $this->countDislike = $interaction->dislike;
@@ -87,16 +87,16 @@ class Counter extends Component
 
         $interaction = Interaction::where('candidate_id',$this->candidate_id)->first();
 
-        if (!isset($_COOKIE['isDisliked'])) {
-            setcookie('isDisliked', 'yes', time() + 7776000);
+        if (!isset($_COOKIE['isDisliked'.$this->candidate_id])) {
+            setcookie('isDisliked'.$this->candidate_id, 'yes', time() + 7776000);
             $interaction->dislike++;
         }
-        // setcookie('isLike', 'no', time() + 7772000);
-        // dd($_COOKIE['isLike'] != 'yes');
-        (isset($_COOKIE['isDisliked']) && $_COOKIE['isDisliked'] != 'yes') ? $interaction->dislike++ : '';
-        setcookie('isDisliked', 'yes', time() + 7776000);
-        (isset($_COOKIE['isLike']) && $_COOKIE['isLike'] == 'yes') ? $interaction->like-- : '';
-        setcookie('isLike', 'no', time() + 7774000);
+        // setcookie('isLike'.$this->candidate_id, 'no', time() + 7772000);
+        // dd($_COOKIE['isLike'.$this->candidate_id] != 'yes');
+        (isset($_COOKIE['isDisliked'.$this->candidate_id]) && $_COOKIE['isDisliked'.$this->candidate_id] != 'yes') ? $interaction->dislike++ : '';
+        setcookie('isDisliked'.$this->candidate_id, 'yes', time() + 7776000);
+        (isset($_COOKIE['isLike'.$this->candidate_id]) && $_COOKIE['isLike'.$this->candidate_id] == 'yes') ? $interaction->like-- : '';
+        setcookie('isLike'.$this->candidate_id, 'no', time() + 7774000);
         $interaction->save();
         $this->countLike = $interaction->like;
         $this->countDislike = $interaction->dislike;

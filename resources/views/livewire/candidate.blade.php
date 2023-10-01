@@ -116,7 +116,7 @@
                                     <span class="fas fa-medal mr-2" style="color: rgb(18, 177, 240);"></span>
                                     <span class="fas fa-medal mr-2" style="color: rgb(189, 147, 10);"></span>
                                 </span>
-                                <h3 class="h5 mb-0">{{$candidate->name}}</h3>
+                                <h3 class="h5 mb-0">{{$candidate->fullname()}}</h3>
                                 <p class="card-text">{{$candidate->slogan}}</p>
                                 <a class="btn btn-sm btn-primary mb-4" href="{{route('profil',[$candidate->id])}}">
                                     <span class="fas fa-plus mr-1"></span> Détail

@@ -9,11 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
-    // protected $with = ['comments'];
+    protected $with = ['replys'];
 
     protected $guarded = [];
 
-    public function comments()
+    public function replys()
     {
         return $this->hasMany(Comment::class);
     }

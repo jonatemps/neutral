@@ -20,9 +20,11 @@ class Comment extends Component
     public $nameReplay;
     public $emailReplay;
     public $contentReplay;
+    public $commentFilter;
 
 
     protected $paginationTheme = 'bootstrap';
+
 
 
 
@@ -84,9 +86,7 @@ class Comment extends Component
         // dd($comment);
         $comment->save();
 
-        // $this->content = '';
-
-        return redirect(request()->header('Referer'));
+        $this->content = '';
     }
 
     public function saveReplay($comment_id)
@@ -115,8 +115,8 @@ class Comment extends Component
 
         // dd($comment);
         $comment->save();
-
-        return redirect(request()->header('Referer'));
+        $this->contentReplay = '';
+        // return redirect(request()-> 'header('Referer'));
     }
 
     public function setCookieUser($name,$request){
@@ -129,16 +129,25 @@ class Comment extends Component
 
     public function render()
     {
-        // $comments = $this->candidate->comments->where('comment_id',null)->simplePaginate(2);
-        $comments = ModelsComment::where('comment_id',null)->where('candidate_id',$this->candidate->id)->paginate(2);
 
-        // dd($comments);
-        // $cookie = cookie('name', 'value', 1);
-
-
-        // return response(view('livewire.comment',[
-        //     'comments' => $comments
-        // ]))->cookie('name','value',1);
+        if (!$this->commentFilter) {
+            $comments = ModelsComment::where('comment_id',null)
+                        ->where('candidate_id',$this->candidate->id)
+                        ->orderBy('created_at', 'desc')
+                        ->simplePaginate(2);
+        }elseif ($this->commentFilter == 1) {
+            $comments = ModelsComment::withCount(['replys'])
+                        ->where('candidate_id',$this->candidate->id)
+                        ->orderBy('replys_count', 'desc')
+                        ->orderBy('created_at', 'desc')
+                        ->simplePaginate(2);
+        }elseif ($this->commentFilter == 2) {
+            $comments = ModelsComment::withCount(['replys'])
+                        ->where('candidate_id',$this->candidate->id)
+                        ->orderBy('replys_count', 'asc')
+                        ->orderBy('created_at', 'desc')
+                        ->simplePaginate(2);
+        }
 
         return view('livewire.comment',[
             'comments' => $comments
@@ -146,11 +155,11 @@ class Comment extends Component
     }
 
 
-    public function nextPage(){
-        $this->nextPageUrl();
-    }
+    // public function nextPage(){
+    //     $this->nextPageUrl();
+    // }
 
-    public function previousPage(){
-        $this->previousPage();
-    }
+    // public function previousPage(){
+    //     $this->previousPage();
+    // }
 }

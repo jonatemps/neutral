@@ -17,9 +17,8 @@
                         <!--Breadcrumb-->
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb breadcrumb-gray breadcrumb-transparent my-2">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Contact</li>
                             </ol>
                         </nav>
                         <!--End of Breadcrumb-->
@@ -45,14 +44,14 @@
                         <div class="card bg-primary shadow-soft border-light p-2 p-md-3 p-lg-5">
                             <div class="card-header">
                                 <div class="row justify-content-center">
-                                    <div class="col-12">
+                                    {{-- <div class="col-12">
                                         <div class="shadow-inset p-4 mb-5 rounded">
                                             <iframe class="map rounded" id="gmap_canvas" src="https://maps.google.com/maps?q=san%20francisco&t=&z=8&ie=UTF8&iwloc=&output=embed"></iframe>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-12 col-md-8 text-center mb-5">
-                                        <h1 class="display-2 mb-3">Get in touch today</h1>
-                                        <p class="lead">Have a new project in mind? Need help with an ongoing one? Drop us a line about your project needs, we answer same day.</p>
+                                        <h1 class="display-2 mb-3">Entrez en contact aujourd’hui</h1>
+                                        <p class="lead">Comment trouvez tel candidat? Besoin d’aide pour ta campagne?  Comment ça marche? Nous répondons le même jour.</p>
                                     </div>
                                 </div>
                                 <div class="row mb-5">
@@ -62,7 +61,7 @@
                                             <div class="icon icon-shape shadow-soft border-light rounded-circle mb-4">
                                                 <span class="fas fa-map-marker-alt"></span>
                                             </div>
-                                            <h2 class="h5 icon-box-title">Visit us</h2>
+                                            <h2 class="h5 icon-box-title">nous visiter</h2>
                                             <span>
                                                 27 Silicon Valley
                                                 <br>
@@ -77,10 +76,10 @@
                                             <div class="icon icon-shape shadow-soft border-light rounded-circle mb-4">
                                                 <span class="fas fa-headphones-alt"></span>
                                             </div>
-                                            <h2 class="h5 icon-box-title">Call</h2>
-                                            <span>+3912345678</span>
+                                            <h2 class="h5 icon-box-title">Appel</h2>
+                                            <span>+243 813134572</span>
                                             <div class="text-small text-gray">
-                                                Mon - Fri, 8am - 4pm
+                                                Lun - Sam, 8am - 4pm
                                             </div>
                                         </div>
                                         <!-- End of Call Box -->
@@ -92,8 +91,8 @@
                                                 <span class="far fa-paper-plane"></span>
                                             </div>
                                             <h2 class="h5 icon-box-title">Email</h2>
-                                            <a href="#">example@company.com</a>
-                                            <br><a href="#">name@company.com</a>
+                                            <a href="#">contact@neutral.com</a>
+                                            {{-- <br><a href="#">name@company.com</a> --}}
                                         </div>
                                         <!-- End of Email Box -->
                                     </div>
@@ -102,7 +101,7 @@
                             <form class="col-12 col-md-8 mx-auto">
                                 <!-- Form -->
                                 <div class="form-group">
-                                    <label for="nameInputIcon2">Your Name</label>
+                                    <label for="nameInputIcon2">Ton nom</label>
                                     <div class="input-group mb-4">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><span class="far fa-user-circle"></span></span>
@@ -112,7 +111,7 @@
                                 </div>
                                 <!-- Form -->
                                 <div class="form-group">
-                                    <label for="emailInputIcon2">Your Email</label>
+                                    <label for="emailInputIcon2">Ton Email</label>
                                     <div class="input-group mb-4">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><span class="far fa-envelope"></span></span>
@@ -122,7 +121,7 @@
                                 </div>
                                 <!-- Form -->
                                 <div class="form-group">
-                                    <label for="exampleFormControlTextarea2">Your Email</label>
+                                    <label for="exampleFormControlTextarea2">Ton Message</label>
                                     <textarea class="form-control" placeholder="Enter your message..." id="exampleFormControlTextarea2" rows="4"></textarea>
                                 </div>
                                 <!-- End of Form -->

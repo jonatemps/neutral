@@ -9,17 +9,15 @@ use Orchid\Crud\ResourceRequest;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Orchid\Screen\Fields\Cropper;
-use Orchid\Screen\Fields\TextArea;
-use Orchid\Screen\Repository;
 
-class TestimonyResource extends Resource
+class PartnerResource extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Testimony::class;
+    public static $model = \App\Models\Partner::class;
 
     /**
      * Get the fields displayed by the resource.
@@ -29,23 +27,17 @@ class TestimonyResource extends Resource
     public function fields(): array
     {
         return [
-            Input::make('full_name')
+            Input::make('name')
             ->required()
-            ->title('Nom complet'),
-            Cropper::make('photo')
+             ->title('Nom'),
+            Cropper::make('logo')
             ->required()
-            ->width(64)
-            ->height(64)
-            ->title('Photo'),
-            TextArea::make('comment')
-            ->required()
-            ->title('Commentaire'),
-            Input::make('star_number')
-            ->required()
-            ->type('number')
-            ->min(1)
-            ->max(5)
-            ->title('Nombre Etoil'),
+             ->title('Logo')
+             ->width(122)
+             ->height(48)
+            //  ->width(375)
+            //  ->height(151)
+             ,
         ];
     }
 
@@ -58,13 +50,13 @@ class TestimonyResource extends Resource
     {
         return [
             TD::make('id'),
-            TD::make('full_name'),
-            TD::make('star_number'),
-            TD::make('photo', 'photo')
+            TD::make('name'),
+
+            TD::make('logo', 'logo')
             ->width('150')
             ->render( fn ( $model) => // Please use view('path')
 
-                    "<img src='{$model->photo}'
+                    "<img src='{$model->logo}'
                       alt='sample'
                       class='mw-100 d-block img-fluid rounded-1 w-100'>"),
             TD::make('created_at', 'Date of creation')
@@ -99,47 +91,48 @@ class TestimonyResource extends Resource
         return [];
     }
 
+
     public function onSave(ResourceRequest $request, Model $model)
     {
 
         // dd($request->input());
-        // $model->isDirty('photo');
-        // $model->isClean('photo');
+        // $model->isDirty('logo');
+        // $model->isClean('logo');
 
-        $model->photo = $request->input('photo');
+        $model->logo = $request->input('logo');
 
 
-        // si le photo n'a pas changé
-        if ($model->isClean('photo')) {
+        // si le logo n'a pas changé
+        if ($model->isClean('logo')) {
             $model->fill($request->input());
             $model->save();
 
         }
 
-        // si le photo a changé
-        if ($model->isDirty('photo')) {
+        // si le logo a changé
+        if ($model->isDirty('logo')) {
 
-            // dd('photo chagé',$model->isDirty('photo'),public_path($request->input('photo')));
-            $path_photo = str_replace("\\","/",public_path($request->input('photo')));
-            $type = pathinfo($path_photo, PATHINFO_EXTENSION);
-            $data = file_get_contents($path_photo);
+            // dd('logo chagé',$model->isDirty('logo'),public_path($request->input('logo')));
+            $path_logo = str_replace("\\","/",public_path($request->input('logo')));
+            $type = pathinfo($path_logo, PATHINFO_EXTENSION);
+            $data = file_get_contents($path_logo);
             $imageBase64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
 
 
             $model->fill($request->input());
-            $model->photo = $imageBase64;
+            $model->logo = $imageBase64;
             $model->save();
         }
 
 
-        $image_path = public_path($request->input('photo'));
+        $image_path = public_path($request->input('logo'));
         if (File::exists($image_path)) {
             File::delete($image_path);
         }
 
         $folder_path = public_path('/storage');
-
+        // supprimer le dossier
         if (File::isDirectory($folder_path)) {
             $directories = File::directories($folder_path);
             foreach ($directories as $directory) {
@@ -148,5 +141,4 @@ class TestimonyResource extends Resource
         }
 
     }
-    
 }

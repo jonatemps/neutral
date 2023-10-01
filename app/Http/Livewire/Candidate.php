@@ -18,7 +18,6 @@ class Candidate extends Component
 
     public function render()
     {
-        $articles = Article::paginate($this->perPage);
 
         return view('livewire.candidate',[
             'candidates' =>$this->candidates,

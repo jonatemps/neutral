@@ -1,5 +1,19 @@
 @extends('master')
 
+@section('style')
+<style>
+
+    ul {
+        justify-content: center;
+    }
+    .slogan {
+    height: 65px;
+}
+
+</style>
+<link rel="stylesheet" href="{{asset('css/chart.css')}}">
+@endsection
+
 @section('content')
 <!-- Hero -->
 
@@ -8,17 +22,16 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8 text-center">
                 <h1 class="display-2 mb-4">Trouvez votre candidat</h1>
-                <p class="lead mb-5">Utilisez notre système de filtrage pour pouvoir localiser n'importe quel candidat qui vous interesse étant donné qu'il s'est fait enregistré volontié au Neutral système.</p>
-                <a class="btn btn-primary" href="./contact.html"><span class="fas fa-book-reader mr-2"></span>Our works</a></div>
+                <p class="lead mb-5">Utilisez notre système de filtrage et localiser n'importe quel candidat qui vous interesse étant donné qu'il s'est fait enregistré volontié au Neutral système.</p>
+                <a class="btn btn-primary" href="{{route('contact')}}"><span class="fas fa-phone mr-2"></span>Contact</a></div>
         </div>
         <div class="row">
             <div class="col-12">
                 <!--Breadcrumb-->
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-gray breadcrumb-transparent my-2">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Library</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                        <li class="breadcrumb-item"><a href="{{route('home')}}">Acceuil</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Candidats</li>
                     </ol>
                 </nav>
                 <!--End of Breadcrumb-->
@@ -46,10 +59,11 @@
                 <div class="card bg-primary shadow-soft border-light px-2 text-center mb-5">
                     <div class="card-header pb-0 text-center">
                         <p class=" lead">
-                            Contact management designed for teams and individuals
+                            Candidats les plus visités
                         </p>
                     </div>
-                    <div id="chartWhiteIcon"></div>
+                    {{-- <div id="chartWhiteIcon"></div> --}}
+                    <div id="MovingBullets"></div>
                 </div>
             </div>
             <div class="col-12 mt-5">
@@ -84,4 +98,15 @@
 </div>
 @endsection
 @section('script')
+
+<script>
+    var bestvis = @js($bestvis);
+    console.log(bestvis.original);
+</script>
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>iu
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+<script src="{{asset('js/MovingBullets.js')}}"></script>
+
 @endsection

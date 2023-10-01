@@ -2,24 +2,60 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidate;
 use App\Models\Category;
 use App\Models\Figure;
+use App\Models\Partner;
 use App\Models\Post;
 use App\Models\Province;
+use App\Models\Testimony;
 use Illuminate\Http\Request;
 
 class PageContoller extends Controller
 {
     public function home(){
         $provs = array();
+        $cands = array();
 
 
         // dd(json_encode($tab));
 
-        $provinces = Province::limit(2)->get();
+        $provinces = Province::all();
+
+        $candidates = Candidate::has('interactions')->get();
+
+        $testimonies = Testimony::orderby('created_at','desc')->take(10)->get();
+
+        $partners = Partner::all();
 
 
+        // dd($testimonies);
 
+        // Obtenir les candidats les plus liked
+        foreach ($candidates as $key => $candidate) {
+
+            $tabCirc  = array();
+
+            // array_push($cands,
+            //     [
+            //         'name' => $candidate->name,
+            //         'value' => (int) $candidate->interactions->seen,
+            //     ],
+            // );
+
+            $tab['tag'] = $candidate->firstnameAndName();
+            $tab['count'] = (int) $candidate->interactions->seen;
+
+            array_push($cands,$tab);
+
+        }
+
+        $b = response()->json($cands);
+        // return $b;
+        $cands = $b;
+
+
+        // Obtenir la repartition des sieges afin de le passer à js
         foreach ($provinces as $key => $province) {
 
             $tabCirc  = array();
@@ -30,7 +66,7 @@ class PageContoller extends Controller
                 array_push($tabCirc,
                     [
                         'name' => $circonscription->name,
-                        'value' => $circonscription->elector_number,
+                        'value' => (int) $circonscription->siege_number,
                     ],
                 );
 
@@ -43,11 +79,23 @@ class PageContoller extends Controller
             // dd($tab);
 
         }
-        $provs = json_encode($provs);
+        // $provs = json_encode($provs);
+
+        // $data = ['message' => 'No new orders!'];
+        // return response()->json($data);
+        $a = response()->json($provs);
+        // return $a;
+        $provs = $a;
         // dd($provs);
 
         $figures = Figure::limit(15)->get();
-        return view('home',['figures' => $figures,'provs' => $provs]);
+        return view('home',[
+            'figures' => $figures,
+            'provs' => $provs,
+            'cands' => $cands,
+            'testimonies' => $testimonies,
+            'partners' => $partners
+        ]);
     }
 
     public function about(){

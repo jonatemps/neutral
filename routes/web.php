@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\PageContoller;
+use App\Http\Controllers\PageController;
+use App\Models\Candidate;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +20,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/paginate', function () {
+    $users = Comment::where('comment_id',null)->where('candidate_id',2017)->paginate(2);
+    // $users = Candidate::paginate(10);
+    return view('candid', compact('users'));
+})->name('about');
+
 Route::get('/',[PageContoller::class,'home'])->name('home');
 
 Route::get('/candidat/{candidate}/detail', [CandidateController::class,'detail'])->name('profil');
@@ -31,9 +40,7 @@ Route::get('/stat-our', function () {
     return view('statistique.our-stat');
 })->name('stat.our');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::get('/about', [PageController::class,'about'])->name('about');
 
 
 Route::get('/contact', function () {
