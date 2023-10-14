@@ -1,5 +1,7 @@
 @extends('master')
-
+@section('title')
+Liste candidats
+@endsection
 @section('style')
 <style>
 
@@ -64,33 +66,6 @@
                     </div>
                     {{-- <div id="chartWhiteIcon"></div> --}}
                     <div id="MovingBullets"></div>
-                </div>
-            </div>
-            <div class="col-12 mt-5">
-                <div class="card bg-primary shadow-soft border-light px-4 py-5">
-                    <div class="card-header pb-0 text-center">
-                        <h2 class="h1 mb-3">Get the most out of your network.</h2>
-                        <p class="mb-5 lead">
-                            Contact management designed for teams and individuals
-                        </p>
-                    </div>
-                    <div class="card-body pt-2 px-0 px-lg-7">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-md-8">
-                                <div class="form-group">
-                                    <label class="h6 font-weight-light text-gray" for="subscribeInputEmail">Email address</label>
-                                    <div class="d-flex flex-row justify-content-center">
-                                        <div class="input-group">
-                                            <input class="form-control form-control-xl border-light" id="subscribeInputEmail" placeholder="example@company.com" type="email">
-                                            <div class="input-group-prepend">
-                                                <button type="submit" class="btn btn-primary rounded-right">Subscribe</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

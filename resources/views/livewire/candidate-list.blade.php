@@ -1,6 +1,6 @@
 <div>
     <!-- Section -->
-    <div class="section section-lg pt-4 px-4 pb-0">
+    <div class="section section-lg pt-4 px-4 pb-4">
         <div class="container">
             @if (session()->has('message'))
                 <div class="alert alert-success">
@@ -17,7 +17,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><span class="fas fa-search"></span></span>
                             </div>
-                            <input class="form-control" wire:model="searchBar" id="exampleInputIcon1" placeholder="Icon Left" type="text" aria-label="Input with icon left">
+                            <input class="form-control" wire:model="searchBar" id="exampleInputIcon1" placeholder="Tapez un nom" type="text" aria-label="Input with icon left">
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="custom-control custom-switch">
                         <input type="checkbox" wire:model="searchAdvenced" class="custom-control-input" id="customSwitch1">
-                        <label class="custom-control-label" for="customSwitch1">Activer/Désactiver</label>{{$searchAdvenced}}
+                        <label class="custom-control-label" for="customSwitch1">Désactiver/Activer</label>{{$searchAdvenced}}
                     </div>
                 </div>
             </div>
@@ -42,19 +42,19 @@
                         <div class="form-check">
                             <input class="form-check-input" wire:model="DepProv" type="checkbox" value="1" id="defaultCheck555" checked>
                             <label class="form-check-label" for="defaultCheck555">
-                            Députation Provinciale {{$DepProv}}
+                            Scrutin Provinciale {{$DepProv}}
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" wire:model="DepNatoin" type="checkbox" value="2" id="defaultCheck666">
                             <label class="form-check-label" for="defaultCheck666">
-                                Députation Nationnale {{$DepNatoin}}
+                                Scrutin Nationnale {{$DepNatoin}}
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" wire:model="Presidence" type="checkbox" value="3" id="defaultCheck777">
                             <label class="form-check-label" for="defaultCheck777">
-                                Présidentielle {{$Presidence}}
+                               Scrutin Présidentielle {{$Presidence}}
                             </label>
                         </div>
                     </div>
@@ -159,29 +159,6 @@
                 <div class="col-md-4">
                     <nav aria-label="Products page navigation">
                         {{ $candidatures->links() }}
-                        {{-- <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#">Previous</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">4</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">5</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul> --}}
                     </nav>
                 </div>
             </div>

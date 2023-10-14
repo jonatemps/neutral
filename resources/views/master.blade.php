@@ -20,7 +20,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Primary Meta Tags -->
-<title>Neumorphism UI</title>
+<title>Neutral @yield('title')</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="title" content="Neumorphism UI">
 <meta name="author" content="Themesberg">
@@ -131,12 +131,12 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link" data-toggle="dropdown" >
-                            <span class="nav-link-inner-text">Statistiques</span>
+                            <span class="nav-link-inner-text">Visuels</span>
                             <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{route('stat.ceni')}}">CENI</a></li>
                             <li><a class="dropdown-item" href="{{route('stat.our')}}">Neutral</a></li>
+                            <li><a class="dropdown-item" href="{{route('stat.ceni')}}">CENI</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -185,9 +185,7 @@
 
 </main>
 
-    {{-- <a id="producthunt-badge" href="https://www.producthunt.com/posts/neumorphism-ui?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-neumorphism-ui" >
-        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=200908&theme=dark" alt="Neumorphism UI - Neumorphism inspired UI web components, sections and pages | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" />
-    </a> --}}
+
 
     <a id="producthunt-badge" href="#top" >
         <button class="btn btn-primary btn-pill  btn-icon-only text-twitter mr-2" type="button" aria-label="twitter button" title="twitter button">
@@ -196,12 +194,12 @@
     </a>
 
     <a href=""><span class="fas fa-angle-down"></span></a>
-<footer class="d-flex pb-5 pt-6 pt-md-7 border-top border-light bg-primary">
+<footer class="d-flex pt-3 pt-md-3 border-top border-light bg-primary">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <p><strong>Neutral</strong> offre un cadre d’exposition des candidatures, donnant ainsi la possibilité aux populations d’avoir une idée sur les candidats à qui ils ont affaire.
-                    </p>
+                <p><strong>Neutral</strong> vous aide à atteindre vos électeurs, Neutral vous aide à connaitre vos candidats.
+                </p>
                 <ul class="d-flex list-unstyled mb-5 mb-lg-0">
                     <li class="mr-2">
                         <a href="https://twitter.com/themesberg"  class="btn btn-icon-only btn-pill btn-primary" aria-label="twitter social link"
@@ -273,10 +271,10 @@
                 <p class="text-gray font-small m-0">Nous ne partagerons jamais vos coordonnées. Voir notre <a class="text-black" href="#">politique de confidentialité</a></p>
             </div>
         </div>
-        <hr class="my-5">
+        {{-- <hr class="my-5"> --}}
         <div class="row">
             <div class="col">
-                <a href="https://themesberg.com"  class="d-flex justify-content-center">
+                <a href=""  class="d-flex justify-content-center">
                     <img src="./assets/img/themesberg.svg" height="25" class="mb-3" alt="Themesberg Logo">
                 </a>
             <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">

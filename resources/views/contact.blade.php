@@ -1,5 +1,7 @@
 @extends('master')
-
+@section('title')
+Contact
+@endsection
 
 @section('content')
 
@@ -10,7 +12,7 @@
                     <div class="col-12 col-lg-8 text-center">
                         <h1 class="display-2 mb-4">Entrez en contact avec nous.</h1>
                         <p class="lead mb-5">Utilisz notre système de filtrage pour pouvoir localiser n'importe quel candidat qui vous interesse etant donné qu'il se soit enregistré volontié dans notre système.</p>
-                        <a class="btn btn-primary" href="./contact.html"><span class="fas fa-book-reader mr-2"></span>Our works</a></div>
+                        <a class="btn btn-primary" href="{{route('contact')}}"><span class=""></span></a></div>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -243,7 +245,7 @@
                 </div>
         </div>
 
-        <section class="section section-lg pt-0">
+        <section class="section section-lg pb-0">
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center text-md-left">
                     <div class="col-md-4 col-lg-3 mb-4 mb-lg-0">
@@ -365,112 +367,31 @@
         <section class="section section-lg pt-0">
             <div class="container">
                 <div class="row mt-4">
-                    <div class="col-md-12">
-                        <div class="autoplay-carousel owl-carousel owl-theme owl-loaded owl-drag">
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage" style="transform: translate3d(-1866px, 0px, 0px); transition: all 0.25s ease 0s; width: 3360px;">
-                                    <div class="owl-item cloned" style="width: 363.333px; margin-right: 10px;">
-                                        <div class="item p-3">
-                                            <div class="card bg-primary shadow-soft border-light">
-                                                <div class="card-header p-4">
-                                                    <img src="./assets/img/team/profile-picture-1.jpg" class="card-img-top rounded" alt="Wood Portrait">
-                                                </div>
-                                                <div class="card-body pt-2">
-                                                    <h3 class="h5 mb-2">Christopher Wood</h3>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 363.333px; margin-right: 10px;">
-                                        <div class="item p-3">
-                                            <div class="card bg-primary shadow-soft border-light">
-                                                <div class="card-header p-4">
-                                                    <img src="./assets/img/team/profile-picture-2.jpg" class="card-img-top rounded" alt="Wood Portrait">
-                                                </div>
-                                                <div class="card-body pt-2">
-                                                    <h3 class="h5 mb-2">Christopher Wood</h3>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 363.333px; margin-right: 10px;">
-                                        <div class="item p-3">
-                                            <div class="card bg-primary shadow-soft border-light">
-                                                <div class="card-header p-4">
-                                                    <img src="./assets/img/team/profile-picture-3.jpg" class="card-img-top rounded" alt="Wood Portrait">
-                                                </div>
-                                                <div class="card-body pt-2">
-                                                    <h3 class="h5 mb-2">Christopher Wood</h3>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 363.333px; margin-right: 10px;">
-                                        <div class="item p-3">
-                                            <div class="card bg-primary shadow-soft border-light">
-                                                <div class="card-header p-4">
-                                                    <img src="./assets/img/team/profile-picture-4.jpg" class="card-img-top rounded" alt="Wood Portrait">
-                                                </div>
-                                                <div class="card-body pt-2">
-                                                    <h3 class="h5 mb-2">Christopher Wood</h3>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 363.333px; margin-right: 10px;">
-                                        <div class="item p-3">
-                                            <div class="card bg-primary shadow-soft border-light">
-                                                <div class="card-header p-4">
-                                                    <img src="./assets/img/team/profile-picture-1.jpg" class="card-img-top rounded" alt="Wood Portrait">
-                                                </div>
-                                                <div class="card-body pt-2">
-                                                    <h3 class="h5 mb-2">Christopher Wood</h3>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 363.333px; margin-right: 10px;">
-                                        <div class="item p-3">
-                                            <div class="card bg-primary shadow-soft border-light">
-                                                <div class="card-header p-4">
-                                                    <img src="./assets/img/team/profile-picture-2.jpg" class="card-img-top rounded" alt="Wood Portrait">
-                                                </div>
-                                                <div class="card-body pt-2">
-                                                    <h3 class="h5 mb-2">Christopher Wood</h3>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: 363.333px; margin-right: 10px;">
-                                        <div class="item p-3">
-                                            <div class="card bg-primary shadow-soft border-light">
-                                                <div class="card-header p-4">
-                                                    <img src="./assets/img/team/profile-picture-3.jpg" class="card-img-top rounded" alt="Wood Portrait">
-                                                </div>
-                                                <div class="card-body pt-2">
-                                                    <h3 class="h5 mb-2">Christopher Wood</h3>
-                                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="col-12 mt-5">
+                        <div class="card bg-primary shadow-soft border-light px-4 py-5">
+                            <div class="card-header pb-0 text-center">
+                                <h2 class="h1 mb-3">Get the most out of your network.</h2>
+                                <p class="mb-5 lead">
+                                    Contact management designed for teams and individuals
+                                </p>
+                            </div>
+                            <div class="card-body pt-2 px-0 px-lg-7">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <div class="form-group">
+                                            <label class="h6 font-weight-light text-gray" for="subscribeInputEmail">Email address</label>
+                                            <div class="d-flex flex-row justify-content-center">
+                                                <div class="input-group">
+                                                    <input class="form-control form-control-xl border-light" id="subscribeInputEmail" placeholder="example@company.com" type="email">
+                                                    <div class="input-group-prepend">
+                                                        <button type="submit" class="btn btn-primary rounded-right">Subscribe</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="owl-nav disabled">
-                                <button type="button" aria-label="github social link" role="presentation" class="owl-prev">
-                                    <span aria-label="Previous">‹</span>
-                                </button>
-                                <button type="button" aria-label="github social link" role="presentation" class="owl-next">
-                                    <span aria-label="Next">›</span>
-                                </button>
-                            </div>
-                            <div class="owl-dots disabled"></div>
                         </div>
                     </div>
                 </div>

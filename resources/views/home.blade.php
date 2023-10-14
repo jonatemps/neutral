@@ -1,5 +1,7 @@
 @extends('master')
-
+@section('title')
+Acceuil
+@endsection
 @section('style')
 <link rel="stylesheet" href="{{asset('css/chart.css')}}">
 @endsection
@@ -182,9 +184,9 @@
                     <div class="col-12 py-5">
                         <div class="card bg-primary shadow-soft border-light px-2 text-center mb-5">
                             <div class="card-header pb-0 text-center">
-                                <p class=" lead">
+                                <h3 >
                                     Répartition de sièges
-                                </p>
+                                </h3>
                             </div>
                             <div id="treeChart"></div>
                         </div>
@@ -257,7 +259,7 @@
 
         {{-- partners section --}}
 
-        <section class="section section-lg pt-0">
+        <section class="section section-lg pb-0 pt-0">
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center text-md-left">
                     <div class="col-md-4 col-lg-3 mb-4 mb-lg-0">
@@ -376,42 +378,6 @@
                 </div>
             </div>
         </section>
-
-
-        <div class="section section-lg pt-0">
-            <div class="container">
-                <!-- End of title-->
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="card bg-primary shadow-soft border-light px-4 py-5">
-                            <div class="card-header pb-0 text-center">
-                                <h2 class="h1 mb-3">Tirez le meilleur profit de nos contenu.</h2>
-                                <p class="mb-5 lead">
-                                    Inscrivez-vous à notre liste de diffusion. Nous écrivons rarement, mais seulement le meilleur contenu.
-                                </p>
-                            </div>
-                            <div class="card-body pt-2 px-0 px-lg-7">
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
-                                        <div class="form-group">
-                                            <label class="h6 font-weight-light text-gray" for="subscribeInputEmail">Email address</label>
-                                            <div class="d-flex flex-row justify-content-center">
-                                                <div class="input-group">
-                                                    <input class="form-control form-control-xl border-light" id="subscribeInputEmail" placeholder="example@company.com" type="email">
-                                                    <div class="input-group-prepend">
-                                                        <button type="submit" class="btn btn-primary rounded-right">Subscribe</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 @endsection
 

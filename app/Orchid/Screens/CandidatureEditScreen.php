@@ -59,8 +59,8 @@ class CandidatureEditScreen extends Screen
             'diplomas' => Diploma::where('candidate_id',$candidate->id)->get(),
             'experiences' => Experience::where('candidate_id',$candidate->id)->get(),
             'photos' => Photo::where('candidate_id',$candidate->id)->get(),
-            'videos' => video::where('candidate_id',$candidate->id)->get(),
-            'videos' => video::where('candidate_id',$candidate->id)->get(),
+            'videos' => Video::where('candidate_id',$candidate->id)->get(),
+            'videos' => Video::where('candidate_id',$candidate->id)->get(),
 
         ];
     }

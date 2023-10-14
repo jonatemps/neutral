@@ -26,19 +26,17 @@ Route::get('/paginate', function () {
     return view('candid', compact('users'));
 })->name('about');
 
-Route::get('/',[PageContoller::class,'home'])->name('home');
+Route::get('/',[PageController::class,'home'])->name('home');
 
 Route::get('/candidat/{candidate}/detail', [CandidateController::class,'detail'])->name('profil');
 
 Route::get('/candidates', [CandidateController::class,'list'])->name('candidates');
 
+Route::get('/about', [PageController::class,'about'])->name('about');
 
-Route::get('/stat-ceni', function () {
-    return view('statistique.ceni-stat');
-})->name('stat.ceni');
-Route::get('/stat-our', function () {
-    return view('statistique.our-stat');
-})->name('stat.our');
+Route::get('/ceni-stat',[PageController::class,'ceni_stat'])->name('stat.ceni');
+Route::get('/our-stat',[PageController::class,'our_stat'])->name('stat.our');
+
 
 Route::get('/about', [PageController::class,'about'])->name('about');
 

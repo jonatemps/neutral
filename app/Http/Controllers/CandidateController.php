@@ -27,23 +27,18 @@ class CandidateController extends Controller
 
         foreach ($bestvisited as $key => $item) {
 
-            $photo  = array();
-
-                array_push($photo,
-                    [
-                        'src' => $item->photo,
-                    ],
-                );
-
-            $base64_string = "BASE64_ENCODED_STRING";
-            $image_data = base64_decode($item->photo);
-            $file_path = "image$item->fullname().png";
-            file_put_contents($file_path, $image_data);
-
+            // $base64_string = "BASE64_ENCODED_STRING";
+            // $image_data = file_get_contents($item->photo);
+            // $file_path = 'stat/image'.$item->name.$item->id.'.png';
+            // file_put_contents($file_path, $image_data);
+            // dd(asset($file_path));
+                // array_push($photo,
+                //     ['src' => asset($file_path)],
+                // );
 
             $tab['name'] = $item->fullname();
             $tab['steps'] = (int) $item->vue_sum;
-            $tab['pictureSettings'] = $photo;
+            $tab['pictureSettings'] = ['src' => $item->photo];
 
             array_push($bestvis,$tab);
             // dd($tab);

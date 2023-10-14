@@ -1,5 +1,7 @@
 @extends('master')
-
+@section('title')
+Apropos de nous
+@endsection
 @section('content')
 <!-- Hero -->
 <div class="section section-header pb-4">
@@ -80,7 +82,7 @@
                     <div class="icon icon-shape shadow-soft border border-light rounded-circle mb-4">
                         <span class="far fa-smile-beam"></span>
                     </div>
-                    <h3 class="h5">Touché Positif</h3>
+                    <h3 class="h5">Personnes Touchés</h3>
                     <span class="counter display-3 text-gray d-block">{{$touched}}</span>
                 </div>
                 <!-- End of Visit Box -->

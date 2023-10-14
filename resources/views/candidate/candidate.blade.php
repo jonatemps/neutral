@@ -1,5 +1,7 @@
 @extends('master')
-
+@section('title')
+détail candidat
+@endsection
 @section('style')
 <style>
     article p, article blockquote {
