@@ -8,7 +8,7 @@
                         <span class="fas fa-box-open"></span>
                     </div>
                     <h2 class="h5 my-3">+ 300 portfolio des candidats</h2>
-                    <p class="px-lg-4">Des pages entière consacrée  à la promotion des chaque candidat, avec des informations mettant en valeur ce dernier.</p>
+                    <p class="px-lg-4">Des pages entièrement consacrée  à l'image des chaque candidat, avec des informations mettant en valeur ce dernier.</p>
                 </div>
                 <!-- End of Icon box -->
             </div>
@@ -19,7 +19,7 @@
                         <span class="fas fa-pager"></span>
                     </div>
                     <h2 class="h5 my-3">+ des contenus Statistiques</h2>
-                    <p class="px-lg-4">Exploriez les statistiques de la CENI ainsi que ces générées grâce aux données de Neutral.</p>
+                    <p class="px-lg-4">Explorez les visuels de la CENI ainsi que ceux générés grâce aux données de Neutral.</p>
                 </div>
                 <!-- End of Icon box -->
             </div>

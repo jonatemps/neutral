@@ -6,8 +6,10 @@ use App\Models\Candidate;
 use App\Models\Category;
 use App\Models\Circumscription;
 use App\Models\Comment;
+use App\Models\Contact;
 use App\Models\Figure;
 use App\Models\Interaction;
+use App\Models\Newsletter;
 use App\Models\Partner;
 use App\Models\Post;
 use App\Models\Province;
@@ -103,8 +105,8 @@ class PageController extends Controller
     }
 
     public function about(){
-        $visitors = 200+Interaction::sum('seen');
-        $touched = 200+Comment::all()->count();
+        $visitors = 2002+Interaction::sum('seen');
+        $touched = 2300+Comment::all()->count();
         $circonscription = Circumscription::all()->count();
 
         // dd($touched,$circonscription,$visitors);
@@ -113,9 +115,34 @@ class PageController extends Controller
 
 
     public function contact(){
-        return view('contact');
+        $testimonies = Testimony::orderby('created_at','desc')->take(10)->get();
+        $partners = Partner::all();
+
+        return view('contact',[
+            'testimonies' => $testimonies,
+            'partners' => $partners
+        ]);
     }
 
+    public function sendMessage(Request $request){
+        // dd($request->input());
+        $contact = new Contact();
+        $contact->fill($request->input())->save();
+
+        return redirect()->back()->with('alert', 'Votre message a été soumis avec succès !')
+                                ->with('name', strtoupper(strtolower($request->input('name'))));
+    }
+
+    public function newsletter(Request $request){
+        $this->validate($request, [
+            'email' => 'required|email|unique:newsletters,email',
+        ]);
+        // dd($request->input());
+        $newsletter = new Newsletter();
+        $newsletter->fill($request->input())->save();
+
+        return redirect()->back()->with('alert', 'Votre adresse est enregistrée dans la Newsletter !');
+    }
 
     public function our_stat(Request $request){
         $cands = array();

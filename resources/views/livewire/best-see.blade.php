@@ -67,7 +67,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <a class="btn btn-sm btn-primary mr-3" href="{{route('profil',[$candidature->id])}}">
+                                <a class="btn btn-sm btn-primary mr-3" href="{{route('profil',[$candidature->candidate->id])}}">
                                     <span class="fas fa-book-reader mr-1"></span> Détail
                                 </a>
                                 {{-- <a class="btn btn-sm btn-primary" href="#">

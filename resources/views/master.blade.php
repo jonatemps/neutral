@@ -157,7 +157,7 @@
                         <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
                     </a> --}}
                     <a href=""  class="btn btn-primary" style="padding: 1.9px;" data-toggle="dropdown">
-                        <img src="{{asset('assets/img/team/big-profile-picture-1.jpg')}}" alt="" srcset="" style="width: 50px;height: 50px;border-radius: 90px;">
+                        <img src="{{asset('../../images/user-icon.jpg')}}" alt="" srcset="" style="width: 50px;height: 50px;border-radius: 90px;">
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../../html/pages/about.html">About</a></li>
@@ -233,7 +233,7 @@
                     <li class="mb-1"><a class="p-2"  href="{{route('home')}}">Accueil</a></li>
                     <li class="mb-1"><a class="p-2"  href="{{route('candidates')}}">Candidats</a></li>
                     <li class="mb-1"><a class="p-2"  href="{{route('about')}}">A propos</a></li>
-                    <li><a class="p-2"  href="{{route('stat.our')}}">Statisiques</a></li>
+                    <li><a class="p-2"  href="{{route('stat.our')}}">Visuels</a></li>
                     <li><a class="p-2"  href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </div>
@@ -244,17 +244,14 @@
                         <a class="p-2" href="{{route('candidates')}}" >Candidats</a>
                     </li>
                     <li class="mb-1">
-                        <a class="p-2" href="{{route('stat.our')}}" >Statistique</a>
-                    </li>
-                    <li class="mb-1">
-                        <a class="p-2"  href="{{route('contact')}}">License</a>
+                        <a class="p-2" href="{{route('stat.our')}}" >visuels</a>
                     </li>
                 </ul>
             </div>
             <div class="col-12 col-lg-4 mb-5 mb-lg-0">
                 <h5>S’inscrire</h5>
                 <p class="text-gray font-small mt-2">Inscrivez-vous à notre liste de diffusion. Nous écrivons rarement, mais seulement le meilleur contenu.</p>
-                <form action="{{route('image')}}">
+                <form action="{{route('SubNewsletter')}}" method="POST">
                     @csrf
                     <div class="form-row mb-2">
                         <div class="col-12">
@@ -272,10 +269,10 @@
             </div>
         </div>
         {{-- <hr class="my-5"> --}}
-        <div class="row">
+        <div class="row mb-2">
             <div class="col">
                 <a href=""  class="d-flex justify-content-center">
-                    <img src="./assets/img/themesberg.svg" height="25" class="mb-3" alt="Themesberg Logo">
+                    <img src="{{asset('./assets/img/brand/dark.svg')}}" height="25" class="mb-3" alt="Themesberg Logo">
                 </a>
             <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
                 <p class="font-weight-normal font-small mb-0">Copyright © Neutral

@@ -60,9 +60,9 @@ Liste candidats
             <div class="col-12">
                 <div class="card bg-primary shadow-soft border-light px-2 text-center mb-5">
                     <div class="card-header pb-0 text-center">
-                        <p class=" lead">
+                        <H3>
                             Candidats les plus visités
-                        </p>
+                        </H3>
                     </div>
                     {{-- <div id="chartWhiteIcon"></div> --}}
                     <div id="MovingBullets"></div>

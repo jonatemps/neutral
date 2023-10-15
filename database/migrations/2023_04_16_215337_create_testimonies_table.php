@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('testimonies', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
+            $table->string('title');
             $table->text('photo');
             $table->text('comment');
             $table->string('star_number');

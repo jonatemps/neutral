@@ -41,11 +41,10 @@ Route::get('/our-stat',[PageController::class,'our_stat'])->name('stat.our');
 Route::get('/about', [PageController::class,'about'])->name('about');
 
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
 
-
+Route::get('/contact', [PageController::class,'contact'])->name('contact');
+Route::post('/contact', [PageController::class,'sendMessage'])->name('sendMessage');
+Route::post('/newsletter', [PageController::class,'newsletter'])->name('SubNewsletter');
 Route::get('/image', function (Request $request) {
 
     $path= str_replace("\\","/",public_path('/storage/2023/04/20/e8e72efeedacc3dbb3a06dc92501301b90e0a3f7.png'));

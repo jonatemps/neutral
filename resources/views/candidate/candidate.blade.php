@@ -18,8 +18,7 @@ détail candidat
     width: 100%;
     }
 
-
-    img {
+    figure img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -62,7 +61,7 @@ détail candidat
                     <div class="col-lg-8">
                         <img style="height: 300px;" src="{{$candidate->photo}}" class="rounded-circle img-thumbnail image-lg border-light shadow-inset p-3" alt="Joseph Avatar">
                         <h1 class="h2 my-4">{{$candidate->fullname()}}</h1>
-                        <h2 class="h5 font-weight-normal text-gray mb-4"><span class="fas fa-map-marker-alt mr-2"></span>{{$candidate->slogan}}</h2>
+                        <h2 class="h5 font-weight-normal text-gray mb-4">{{$candidate->slogan}}</h2>
                         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-3 mb-0">
                             <li>
                                 <a href="{{$candidate->id_facebook}}" target="_blank" aria-label="facebook social link" class="icon icon-xs icon-facebook mr-3">
@@ -230,7 +229,7 @@ détail candidat
                                                                 <div class="timeline-item text-left">
                                                                     <div class="card border-light shadow-inset p-3">
                                                                         <div class="card-body bg-primary shadow-soft rounded border border-light p-3">
-                                                                            <span class="text-gray">{{$diploma->start_year}}-{{$diploma->end_year}}</span>
+                                                                            <span class="text-gray">{{$diploma->start_year}} à {{$diploma->end_year}}</span>
                                                                             <h3 class="h4 my-2">{{$diploma->institution_name}}</h3>
                                                                             <img src="{{$diploma->institution_logo}}" class="image-xs" alt="Northwestern logo">
                                                                             <p class="font-weight-bolder">{{$diploma->title}}</p><p>{{$diploma->description}}</p>
@@ -268,7 +267,7 @@ détail candidat
                                                                 <div class="timeline-item text-left">
                                                                     <div class="card border-light shadow-inset p-3">
                                                                         <div class="card-body bg-primary shadow-soft rounded border border-light p-3">
-                                                                            <span class="text-gray">{{$experience->start_year}}-{{$experience->end_year}}</span>
+                                                                            <span class="text-gray">{{$experience->start_year}} à {{$experience->end_year}}</span>
                                                                             <h3 class="h4 my-2">{{$experience->institution_name}}</h3>
                                                                             <img src="{{$experience->institution_logo}}" class="image-xs" alt="Northwestern logo">
                                                                             <p class="font-weight-bolder">{{$experience->title}}</p><p>{{$experience->description}}</p>
@@ -324,14 +323,6 @@ détail candidat
                                                     <div class="card-body py-1">
                                                         <a href="#" ><h4 class="h6 text-center">{{$photo->title}}</h4></a>
                                                         {{-- <p class="card-text mb-4">All of the world's 10 largest companies as measured by market capitalization are American. Market capitalization is the total value of a company's entire purchased shares of stock...</p> --}}
-                                                    </div>
-                                                    <div class="card-footer pt-0">
-                                                        <div class="d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
-                                                            <div class="post-details mb-3 mb-lg-0">
-                                                                <button class="btn btn-sm btn-primary animate-hover mr-2" data-toggle="tooltip" data-placement="bottom" title="Bientôt disponible"><span class="fas fa-thumbs-up mr-2 animate-up-2"></span> 4</button>
-                                                                <button class="btn btn-sm btn-primary text-danger animate-hover" data-toggle="tooltip" data-placement="bottom" title="Bientôt disponible"><span class="fas fa-thumbs-down mr-2 animate-down-2"></span> 1</button>
-                                                            </div>
-                                                        </div>
                                                     </div>
 
                                                     <!-- Modal Content -->
@@ -432,19 +423,6 @@ détail candidat
                                                         <a href="#" ><h4 class="h6 text-center">{{$video->title}}</h4></a>
                                                         {{-- <p class="card-text">All of the world's 10 largest companies as measured by market .</p> --}}
                                                     </div>
-                                                    <div class="card-footer pt-0">
-                                                        <div class="d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
-                                                            <div class="post-details mb-3 mb-lg-0">
-                                                                <button class="btn btn-sm btn-primary animate-hover mr-2" data-toggle="tooltip" data-placement="bottom" title="Bientôt disponible"><span class="fas fa-thumbs-up mr-2 animate-up-2"></span> 4</button>
-                                                                <button class="btn btn-sm btn-primary text-danger animate-hover" data-toggle="tooltip" data-placement="bottom" title="Bientôt disponible"><span class="fas fa-thumbs-down mr-2 animate-down-2"></span> 1</button>
-                                                            </div>
-                                                            {{-- <div class="post-meta">
-                                                                <a class="text-dark mr-3" href="#"><span class="far fa-comments mr-2"></span>33.7k</a>
-                                                                <button class="btn mr-3 btn-link text-black border-0"><span class="fas fa-share mr-2"></span>Share</button>
-                                                                <button class="btn btn-primary"><span class="far fa-save mr-2"></span>Save</button>
-                                                            </div> --}}
-                                                        </div>
-                                                    </div>
 
                                                     <!-- Modal Content -->
                                                     <div class="modal fade" id="{{'modal-video1'.$video->id}}" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
@@ -535,7 +513,7 @@ détail candidat
                             <span class="fab fa-facebook-f"></span>
                         </button>
                         <button class="btn btn-sm btn-icon-only btn-pill btn-reddit d-inline" aria-label="reddit social link">
-                            <span class="fab fa-reddit-alien"></span>
+                            <span class="fab fa-whatsapp text-success"></span>
                         </button>
                     </div>
                     <div class="col-3 col-md-6 text-right">
@@ -602,6 +580,9 @@ détail candidat
                                     </li>
                                 </ul>
                                 <p class="card-text">{{$RecomCandidate->getSlogan()}}</p>
+                                <a class="btn btn-sm btn-primary mr-3" href="{{route('profil',[$RecomCandidate->id])}}">
+                                    <span class="fas fa-book-reader mr-1"></span> Détail
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -620,70 +601,7 @@ détail candidat
     </div>
 </section>
 
-<div class="section section-lg pt-0">
-    <div class="container">
-        <!-- Title -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card bg-primary shadow-soft border-light px-4 py-5 text-center mb-5">
-                    <div class="card-header pb-0">
-                        <h2 class="h1 mb-3">Ready to change your life?</h2>
-                    </div>
-                    <div class="card-body pt-2 px-0 px-lg-7">
-                        <p class="mb-5 lead">
-                            Download Rocket today and take the first step to organize your routine, achieve your personal goals and reflect on your life.
-                        </p>
-                        <a class="btn btn-lg btn-primary mr-md-3 mb-3 mb-sm-0" href="#">
-                            <div class="d-flex align-items-center">
-                                <span class="icon icon-lg mr-3"><span class="fab fa-apple"></span></span>
-                                <div class="d-block text-left">
-                                    <small class="font-small">Download on the</small>
-                                    <div class="h5 mb-0">App Store</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="btn btn-lg btn-primary" href="#">
-                            <div class="d-flex align-items-center">
-                                <span class="icon icon-lg mr-3"><span class="fab fa-google-play"></span></span>
-                                <div class="d-block text-left">
-                                    <small class="font-small">Download on the</small>
-                                    <div class="h5 mb-0">Google Play</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card bg-primary shadow-soft border-light px-4 py-5">
-                    <div class="card-header pb-0 text-center">
-                        <h2 class="h1 mb-3">Get the most out of your network.</h2>
-                        <p class="mb-5 lead">
-                            Contact management designed for teams and individuals
-                        </p>
-                    </div>
-                    <div class="card-body pt-2 px-0 px-lg-7">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-md-8">
-                                <div class="form-group">
-                                    <label class="h6 font-weight-light text-gray" for="subscribeInputEmail">Email address</label>
-                                    <div class="d-flex flex-row justify-content-center">
-                                        <div class="input-group">
-                                            <input class="form-control form-control-xl border-light" id="subscribeInputEmail" placeholder="example@company.com" type="email">
-                                            <div class="input-group-prepend">
-                                                <button type="submit" class="btn btn-primary rounded-right">Subscribe</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
 @endsection
